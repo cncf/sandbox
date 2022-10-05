@@ -38,7 +38,9 @@ Once a comment has been added,  **remove the `Assign-TAG` label and affix the `R
 
 #### TAG(s)
 
-If the issue
+If the issue is affixed the `Assign-TAG` label and you have been assigned the issue as a TAG co-chair, please review the comments for the specific asks regarding the project. When completed, please provide a comment containing any pertinent information. This may include links to a presentation recording, as summary of a discussion with the TAG, or recommendations. 
+
+Once the comment has been added,  **remove the `Assign-TAG` label and affix the `Returning` label**, this lets the TOC know it is ready to be reviewed again. It will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting.
 
 ### Returning
 
