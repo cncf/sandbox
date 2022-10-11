@@ -10,13 +10,6 @@ body:
     placeholder: Comma-separate multiple emails here
   validations:
     required: true
-- type: textarea
-  attributes:
-    label: Project Summary
-    description: Provide a brief, 100-300 word description of the project that explains what it does and why its needed.
-    placeholder: Describe what it does and why it's needed.
-  validations:
-    required: true
 - type: input
   attributes:
     label: Project Summary
@@ -34,21 +27,21 @@ body:
 - type: input
   attributes:
     label: Org repo URL
-    description: Provide the URL of GitHub or Gitlab organization of the project.
+    description: Provide the URL of GitHub or Gitlab organization of the project. If no organization, provide "N/A".
     placeholder: Add org URL here
   validations:
     required: true
 - type: input
   attributes:
     label: Project repo URL
-    description: Provide the URL of the primary source code for the project.
+    description: Provide the URL of the primary source code for the project. If no primary repo exists, provide "N/A" and enumerate repos in the next question.
     placeholder: Add code repo URL here
   validations:
     required: true
 - type: textarea
   attributes:
     label: Additional repos
-    description: Provide the URL any additional repos for this project
+    description: Provide the URL any additional repos for this project if appropriate.
     placeholder: Add additional repo URLs here
   validations:
     required: false
@@ -58,14 +51,14 @@ body:
     description: Provide the URL of the project's website. If the project has no website, please provide the primary repo URL again.
     placeholder: Add website URL here
   validations:
-    required: true
+    required: false
 - type: input
   attributes:
     label: Roadmap
-    description: Provide the URL of the project's roadmap. If no roadmap exists, move on to the next question.
+    description: Provide the URL of the project's roadmap.
     placeholder: Add Roadmap URL here
   validations:
-    required: false
+    required: true
 - type: textarea
   attributes:
     label: Roadmap context
@@ -96,8 +89,8 @@ body:
 - type: input
   attributes:
     label: Contributing or Sponsoring Org
-    description: Provide the URL of the project's contributing or sponsoring organization. If no such organization exists move on to the next question.
-    placeholder: Add sponsoring org URL here
+    description: Provide the URL of the project's contributing or sponsoring company/organization. If no such company/organization exists move on to the next question.
+    placeholder: Add sponsoring company or org URL here
   validations:
     required: false
 - type: input
@@ -132,40 +125,40 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Benefit to the Ecosystem
-    description: How will adding this project benefit the CNCF ecosystem?
-    placeholder: This project benefits the ecosystem by...
+    label: Benefit to the Landscape
+    description: How will adding this project benefit the CNCF landscape?
+    placeholder: This project benefits the landscape by...
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Ecosystem 'Fit'
-    description: Please explain where you see the project "fitting" in the Cloud Native ecosystem.
+    label: Cloud Native 'Fit'
+    description: Please explain where you see the project "fitting" in the Cloud Native landscape.
     placeholder: This project...
   validations:
-    required: true
+    required: false
 - type: textarea
   attributes:
-    label: Ecosystem 'Integration'
+    label: Cloud Native 'Integration'
     description: What CNCF projects does this project complement or depend on, and how?
   validations:
     required: false
 - type: textarea
   attributes:
-    label: Ecosystem overlap
+    label: Cloud Native Overlap
     description: What CNCF projects does this project overlap with, and how?
   validations:
     required: false
 - type: textarea
   attributes:
     label: Similar projects
-    description: Please list similar projects in the CNCF or elsewhere
+    description: Please list similar projects in the CNCF or elsewhere. If none exist, provide "N/A".
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Product and Project separation
-    description: If this project is closely related to one or more products for the sponsoring organization(s), how do you plan to separate this project from any products in terms of organization and development? (if it is not related to a product, just say so)
+    label: Product or Service to Project separation
+    description: If this project is closely related to one or more products or services for the sponsoring company/organization(s), how do you plan to separate this project from any products in terms of organization and development? If it is not related to a product or service, just provide "N/A".
   validations:
     required: true
 - type: textarea
@@ -186,4 +179,3 @@ body:
     description: Any additional information you would like the TOC to consider when evaluating this project?
   validations:
     required: false
-
