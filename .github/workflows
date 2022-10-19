@@ -1,0 +1,17 @@
+# Workflow for Project Moves
+#
+name: Label issue with New
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  label_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Label issues
+        uses: andymckay/labeler@1.0.4
+        with:
+          add-labels: "New"
