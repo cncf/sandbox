@@ -100,7 +100,6 @@ body:
     placeholder: Add maintainer URL here
   validations:
     required: true
-- type: textarea
 -type: checkbox
   id: terms
   attributes:
