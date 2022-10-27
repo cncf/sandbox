@@ -116,6 +116,7 @@ body:
     options:
       - label: If the project is accepted, I agree to donate all project trademarks and accounts to the CNCF
         required: true
+- type: textarea
   attributes:
     label: Why CNCF?
     description:  Why do you want to contribute the project to the CNCF? What value does being part of the CNCF provide the project?
