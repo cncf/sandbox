@@ -100,7 +100,7 @@ body:
     placeholder: Add maintainer URL here
   validations:
     required: true
--type: checkboxes
+- type: checkboxes
   id: terms
   attributes:
     label: IP Policy
@@ -108,7 +108,7 @@ body:
     options:
       - label: If the project is accepted, I agree the project will follow the CNCF IP Policy
         required: true
--type: checkboxes
+- type: checkboxes
   id: terms
   attributes:
     label: Trademark and accounts
