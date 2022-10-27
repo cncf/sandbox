@@ -101,7 +101,7 @@ body:
   validations:
     required: true
 - type: checkboxes
-  id: terms
+  id: ippolicy
   attributes:
     label: IP Policy
     description: By submitting this issue, you understand that if accepted, the project will be required to follow the CNCF IP Policy located at https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy
@@ -109,7 +109,7 @@ body:
       - label: If the project is accepted, I agree the project will follow the CNCF IP Policy
         required: true
 - type: checkboxes
-  id: terms
+  id: trademark
   attributes:
     label: Trademark and accounts
     description: By submitting this issue, you understand that if accepted, all project trademarks and accounts will be donated to the CNCF
