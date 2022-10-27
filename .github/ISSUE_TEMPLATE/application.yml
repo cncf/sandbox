@@ -100,15 +100,15 @@ body:
     placeholder: Add maintainer URL here
   validations:
     required: true
--type: checkbox
+-type: checkboxes
   id: terms
   attributes:
     label: IP Policy
     description: By submitting this issue, you understand that if accepted, the project will be required to follow the CNCF IP Policy located at https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy
     options:
-      - label: If the project is accepted, I agree the project will dollow the CNCF IP Policy
+      - label: If the project is accepted, I agree the project will follow the CNCF IP Policy
         required: true
--type: checkbox
+-type: checkboxes
   id: terms
   attributes:
     label: Trademark and accounts
