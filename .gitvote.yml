@@ -1,0 +1,7 @@
+# Example file: https://github.com/cncf/gitvote/blob/main/docs/config/.gitvote.yml
+default:
+  duration: 13w
+  pass_threshold: 66
+  allowed_voters:
+    teams: 
+      - toc
