@@ -179,3 +179,8 @@ body:
     description: Any additional information you would like the TOC to consider when evaluating this project?
   validations:
     required: false
+- type: markdown
+  attributes:
+    value: |
+      **Leave in to automatically call a TOC Vote:**
+      /vote
