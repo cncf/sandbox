@@ -5,4 +5,10 @@ profiles:
     pass_threshold: 66
     allowed_voters:
       teams:
-        - toc
+        - cncf-toc
+  sandbox:
+    duration: 1w
+    pass_threshold: 66
+    allowed_voters:
+      teams:
+        - cncf-toc
