@@ -3,6 +3,10 @@ description: Apply for CNCF Sandbox
 title: "[Sandbox] <Project Name>"
 labels: [New]
 body:
+- type: markdown
+  attributes:
+    value: |
+     Thanks for filing out a sandbox application. Please read the Sandbox guidelines and understand what the sandbox is along with the [minimal support and marketing expecations](https://github.com/cncf/toc/blob/main/process/sandbox.md#clarifying-marketing-expectations) for sandbox projects.
 - type: textarea
   attributes:
     label: Application contact emails
