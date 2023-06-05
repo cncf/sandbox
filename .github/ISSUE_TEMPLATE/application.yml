@@ -6,7 +6,7 @@ body:
 - type: markdown
   attributes:
     value: |
-     Thanks for filing out a sandbox application. Please read the Sandbox guidelines and understand what the sandbox is along with the [minimal support and marketing expecations](https://github.com/cncf/toc/blob/main/process/sandbox.md#clarifying-marketing-expectations) for sandbox projects.
+     Thanks for filling out a sandbox application. Please read the Sandbox guidelines and understand what the sandbox is along with the [minimal support and marketing expectations](https://github.com/cncf/toc/blob/main/process/sandbox.md#clarifying-marketing-expectations) for sandbox projects.
 - type: textarea
   attributes:
     label: Application contact emails
@@ -24,7 +24,7 @@ body:
 - type: textarea
   attributes:
     label: Project Description
-    description: Provide a brief, 100-300 word description of the project that explains what it does and why its needed.
+    description: Provide a brief, 100-300 word description of the project that explains what it does and why it's needed.
     placeholder: Describe what it does and why it's needed.
   validations:
     required: true
@@ -45,7 +45,7 @@ body:
 - type: textarea
   attributes:
     label: Additional repos
-    description: Provide the URL any additional repos for this project if appropriate.
+    description: Provide the URLs of any additional repos for this project if appropriate.
     placeholder: Add additional repo URLs here
   validations:
     required: false
