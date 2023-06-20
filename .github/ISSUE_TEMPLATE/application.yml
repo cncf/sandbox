@@ -30,22 +30,22 @@ body:
     required: true
 - type: input
   attributes:
-    label: Org repo URL
-    description: Provide the URL of GitHub or Gitlab organization of the project. If no organization, provide "N/A".
+    label: Org repo URL (provide if all repos under the org are in scope of the application)
+    description: Provide the URL of GitHub or Gitlab organization of the projects if all repos under the org are in scope of the application. If no organization, provide "N/A".
     placeholder: Add org URL here
   validations:
     required: true
 - type: input
   attributes:
-    label: Project repo URL
-    description: Provide the URL of the primary source code for the project. If no primary repo exists, provide "N/A" and enumerate repos in the next question.
+    label: Project repo URL in scope of application
+    description: Provide the URL of the primary source code for the project. If there is no single repo but all repos under the org are in scope of the application, provide "N/A". If multiple repos (in addition to the primary repo) exist under an org, but not all are in scope, please enumerate in scope repos in the next question.
     placeholder: Add code repo URL here
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Additional repos
-    description: Provide the URLs of any additional repos for this project if appropriate.
+    label: Additional repos in scope of the application
+    description: Provide the URLs of any additional repos for this project's application if appropriate.
     placeholder: Add additional repo URLs here
   validations:
     required: false
@@ -116,28 +116,28 @@ body:
   id: trademark
   attributes:
     label: Trademark and accounts
-    description: By submitting this issue, you understand that if accepted, all project trademarks and accounts will be donated to the CNCF
+    description: By submitting this issue, you understand that if accepted, all project trademarks (such as the project name) and accounts will be donated to the CNCF. For more information please refer to the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
     options:
       - label: If the project is accepted, I agree to donate all project trademarks and accounts to the CNCF
         required: true
 - type: textarea
   attributes:
     label: Why CNCF?
-    description:  Why do you want to contribute the project to the CNCF? What value does being part of the CNCF provide the project?
+    description:  Why do you want to contribute the project to the CNCF? What value does being part of the CNCF provide the project? Provide detail on why you chose the CNCF that allows the TOC to consider alignment of expectations between the project and the ecosystem.
     placeholder: The CNCF can provide the project with...
   validations:
     required: true
 - type: textarea
   attributes:
     label: Benefit to the Landscape
-    description: How will adding this project benefit the CNCF landscape?
+    description: How will adding this project benefit the CNCF landscape? What is the differentiator or enhancement this project provides to existing project, capabilities, or challenges within the landscape?
     placeholder: This project benefits the landscape by...
   validations:
     required: true
 - type: textarea
   attributes:
     label: Cloud Native 'Fit'
-    description: Please explain where you see the project "fitting" in the Cloud Native landscape.
+    description: Please explain where you see the project "fitting" in the Cloud Native landscape. This should detail how the project is cloud native, which elements of cloud native the project embodies or exemplifies.
     placeholder: This project...
   validations:
     required: false
@@ -161,8 +161,8 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Product or Service to Project separation
-    description: If this project is closely related to one or more products or services for the sponsoring company/organization(s), how do you plan to separate this project from any products in terms of organization and development? If it is not related to a product or service, just provide "N/A".
+    label: Business Product or Service to Project separation
+    description: If this project is identical (name, features, etc.) or closely related to one or more products or services of the sponsoring company/organization(s), how do you plan to separate this project from any products in terms of organization and development? If it is not related to a product or service, just provide "N/A".
   validations:
     required: true
 - type: textarea
