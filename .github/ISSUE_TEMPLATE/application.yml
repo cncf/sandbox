@@ -161,6 +161,12 @@ body:
     required: true
 - type: textarea
   attributes:
+    label: Landscape
+    description: Are you already listed on the CNCF Landscape? 
+  validations:
+    required: true
+- type: textarea
+  attributes:
     label: Business Product or Service to Project separation
     description: If this project is identical (name, features, etc.) or closely related to one or more products or services of the sponsoring company/organization(s), how do you plan to separate this project from any products in terms of organization and development? If it is not related to a product or service, just provide "N/A".
   validations:
