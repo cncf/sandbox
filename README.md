@@ -1,5 +1,5 @@
 # Sandbox
-![CNCF Sandbox](https://github.com/cncf/artwork/blob/master/other/cncf-sandbox/horizontal/color/cncf-sandbox-horizontal-color.png)
+![CNCF Sandbox](https://raw.githubusercontent.com/cncf/artwork/main/other/cncf-sandbox/horizontal/color/cncf-sandbox-horizontal-color.png)
 
 This repository is designed to allow projects seeking to join the CNCF as a :package: [Sandbox](https://github.com/cncf/toc/blob/main/process/sandbox.md) :package: project to submit their applications. It is still a work in progress and we welcome PRs on this repo to automate assignments, improve the process, etc.  If you have any questions, please reach out in the [TOC Slack Channel](https://cloud-native.slack.com/archives/C0MP69YF4) or file an [issue](https://github.com/cncf/sandbox/issues/new) on the repo.
 
