@@ -1,7 +1,8 @@
 # Sandbox
-![CNCF Sandbox](https://github.com/cncf/artwork/blob/main/other/cncf-sandbox/horizontal/color/cncf-sandbox-horizontal-color.png)
 
-This repository is designed to allow projects seeking to join the CNCF as a :package: [Sandbox](https://github.com/cncf/toc/blob/main/process/sandbox.md) :package: project to submit their applications. It is still a work in progress and we welcome PRs on this repo to automate assignments, improve the process, etc.  If you have any questions, please reach out in the [TOC Slack Channel](https://cloud-native.slack.com/archives/C0MP69YF4) or file an [issue](https://github.com/cncf/sandbox/issues/new) on the repo.
+![CNCF Sandbox](https://raw.githubusercontent.com/cncf/artwork/main/other/cncf-sandbox/horizontal/color/cncf-sandbox-horizontal-color.png)
+
+This repository is designed to allow projects seeking to join the CNCF as a :package: [Sandbox](https://github.com/cncf/toc/blob/main/process/sandbox.md) :package: project to submit their applications. It is still a work in progress and we welcome PRs on this repo to automate assignments, improve the process, etc.  If you have any questions, please reach out in the [TOC Slack Channel](https://cloud-native.slack.com/archives/C0MP69YF4) or file an [issue](https://github.com/cncf/sandbox/issues/new?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E) on the repo.
 
 For information on the sandbox process please check out the [details on our sandbox application process below](#how-applications-are-reviewed).
 
@@ -9,7 +10,7 @@ For information on the sandbox process please check out the [details on our sand
 
 Applying is as easy as 1-2-3!
 
-1. Open a new [Sandbox Application](https://github.com/cncf/sandbox/issues/new) using the linked issue form. 
+1. Open a new [Sandbox Application](https://github.com/cncf/sandbox/issues/new?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E) using the linked issue form.
 1. Complete all sections of the form.
 1. Submit the issue.
 
@@ -17,13 +18,14 @@ Applying is as easy as 1-2-3!
 
 Your project's application is placed in the backlog for triaging. You can view the status of your application and others at anytime by checking out our [Project Board](https://github.com/orgs/cncf/projects/14).
 When the TOC meets to review applications, more details on [frequency here](#frequency), your application will be pulled up and discussed. Your application may receive one of several statuses:
+
 * `New` - It is a brand new application and is in the backlog for an upcoming review.
 * `Approved` - The application has been reviewed and been approved by the TOC. The issue will be closed.
 * `Declined` - The application has been reviewed and been declined by the TOC. The comments on the issue will reflect the TOC decision and the issue will be closed.
-* `Need-Info` - The application has been reviewed and requires more information in order for the TOC to further discuss the application.  For instructions on what to do, please jump down to [Need-Info](#Need-Info).
-* `TAG-Assigned` - The application has been reviewed and the TOC would like a TAG to review or consult with the project prior to further discussions.  For instructions on what to do, please jump down to [TAG-Assigned](#TAG-Assigned).
-* `Postponed` - The application has been reviewed and the TOC has determined the project (as it exists at time of review) is not ready for inclusion within the CNCF. For instructions on what to do, please jump down to [Postponed](#Postponed)
-* `Returning` - The application has been reviewed previously, was affixed a `Need-Info` or `TAG-Assigned` label, and that work has been completed and is ready for re-review.  For instructions on what to do, please jump down to [Returning](#Returning).
+* `Need-Info` - The application has been reviewed and requires more information in order for the TOC to further discuss the application.  For instructions on what to do, please jump down to [Need-Info](#need-info).
+* `TAG-Assigned` - The application has been reviewed and the TOC would like a TAG to review or consult with the project prior to further discussions.  For instructions on what to do, please jump down to [TAG-Assigned](#tag-assigned).
+* `Postponed` - The application has been reviewed and the TOC has determined the project (as it exists at time of review) is not ready for inclusion within the CNCF. For instructions on what to do, please jump down to [Postponed](#postponed)
+* `Returning` - The application has been reviewed previously, was affixed a `Need-Info` or `TAG-Assigned` label, and that work has been completed and is ready for re-review.  For instructions on what to do, please jump down to [Returning](#returning).
 
 ### Label statuses defined
 
@@ -57,7 +59,7 @@ If your project is assigned an `TAG-Assigned` label, the TOC will comment which 
 Once a comment has been added, please add the below text to your comment so the TOC and staff know to update the issue:
 `Completed TAG review, project is Returning`
 
-This lets the TOC know the project is ready to be reviewed again. A TOC member or staff will remove the `TAG-Assigned` label and affix `Returning` where it will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting. 
+This lets the TOC know the project is ready to be reviewed again. A TOC member or staff will remove the `TAG-Assigned` label and affix `Returning` where it will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting.
 
 ##### TAG(s)
 
@@ -69,10 +71,10 @@ Once a comment has been added, please add the below text to your comment so the 
 This lets the TOC know the project is ready to be reviewed again. A TOC member or staff will remove the `TAG-Assigned` label and affix `Returning` where it will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting.
 
 #### Postponed
- 
+
  If the issue has been affixed with the `Postponed` label it will be closed as the TOC has determined the project at the time of discussion is not ready for inclusion into the CNCF. There will be a comment on the issue that annotates the expectations in order for the project to be re-reviewed by the TOC. Depending on the status and details, there are a few options to be re-reviewed. For information on review ordering for postponed projects, plese refer to the [Review Order section](#review-order).
- 
- ##### Returning for review after being postponed
+
+##### Returning for review after being postponed
 
 a. If the project has had substantial changes to the original information provided, open a new issue and link to the previous issue in the `Additional information` question (last question on the form). The project will be reviewed as if it were a new project applying but retain the historical context of the previous review to assist in evaluation.
 
@@ -88,7 +90,7 @@ Issues affixed with the `Returning` label are placed in the `Upcoming` status on
 
 ### Frequency
 
-The TOC reviews sandbox applications approximately **every two months** as of June 2020 in a non-public meeting; referred to as "session" hereafter. 
+The TOC reviews sandbox applications approximately **every two months** as of June 2020 in a non-public meeting; referred to as "session" hereafter.
 
 ### Quantity
 
