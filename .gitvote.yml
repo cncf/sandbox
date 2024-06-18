@@ -9,7 +9,7 @@ profiles:
       exclude_team_maintainers: true
     close_on_passing: true
   sandbox:
-    duration: 1w
+    duration: 2w
     pass_threshold: 66
     allowed_voters:
       teams:
