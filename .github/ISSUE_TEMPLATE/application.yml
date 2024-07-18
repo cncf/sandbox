@@ -6,7 +6,7 @@ body:
 - type: markdown
   attributes:
     value: |
-     Thanks for filling out a sandbox application. Please read the Sandbox guidelines and understand what the sandbox is along with the [minimal support and marketing expectations](https://github.com/cncf/toc/blob/main/process/sandbox.md#clarifying-marketing-expectations) for sandbox projects.
+     Thanks for filling out a sandbox application. Please read the Sandbox guidelines and understand what the sandbox is along with the [minimal support and marketing expectations](https://contribute.cncf.io/resources/project-services/maturity-levels/#sandbox) for sandbox projects.
 - type: textarea
   attributes:
     label: Application contact emails
