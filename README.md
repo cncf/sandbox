@@ -17,6 +17,17 @@ Applying is as easy as 1-2-3!
 ## What's next?
 
 Your project's application is placed in the backlog for triaging. You can view the status of your application and others at anytime by checking out our [Project Board](https://github.com/orgs/cncf/projects/14).
+
+As we approach Sandbox application review meetings, CNCF staff will move applications to the "upcoming" column on the Project Board (number dependent on how many can be reviewed in a given meeting). At this point, each application's associated Technical Advisory Group (TAG) and the TOC will ask questions, seek to learn more, and provide a recommendation to the TOC for project inclusion. Projects which applied may also field questions from interested community members beyond any TAG and TOC questions.
+
+### Community Comments on Applications
+
+The TOC welcomes and appreciates community members support and exploration in surfacing items for technical consideration as part of sandbox applications, it allows the TOC to have a more comprehensive perspective on each projects' potential and supports our TAGs in understanding more about these projects. 
+
+In keeping with the [Technical Leadership Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#technical-leadership-principles), community members providing comments and querstions should [be welcoming and curious in their comments](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#be-welcoming), [provide feedback with courtesy](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#provide-feedback-and-appreciation-appropriately), and [foster respectful resolution](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#foster-respectful-resolution).  Embodying the technical leadership principles as you comment on these applications directly contributes to sustaining the open, community-oriented nature of CNCF.
+
+### The TOC's sandbox review meeting
+
 When the TOC meets to review applications, more details on [frequency here](#frequency), your application will be pulled up and discussed. Your application may receive one of several statuses:
 
 * `New` - It is a brand new application and is in the backlog for an upcoming review.
