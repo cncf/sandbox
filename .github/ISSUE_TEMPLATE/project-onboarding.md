@@ -31,20 +31,68 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
 - [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help.
 - [ ] Submit a [pull request](https://github.com/cncf/landscape/pulls) to add your project as a Sandbox project to the [Cloud Native Landscape](https://landscape.cncf.io) by updating [landscape.yml](https://github.com/cncf/landscape/blob/master/landscape.yml) following these [instructions](https://github.com/cncf/landscape2/blob/main/docs/config/data.yml).
-- [ ] Transfer [your domain to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/2/create/63). The "LF Stakeholder email" is <projects@cncf.io>.
+- [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/2/create/63). The "LF Stakeholder email" is <projects@cncf.io>.
 - [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements).
-- [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork.
-- [ ] Transfer website analytics to <projects@cncf.io>. CNCF staff can help.
+- [ ] Submit a [pull request](https://github.com/cncf/artwork) with your existing artwork.  
+_Note_: If you don't have artwork, CNCF can help design some.
+- [ ] Transfer website analytics to <projects@cncf.io>, if applicable. CNCF staff can help.
 
 ## Update and document
 
 - [ ] Ensure that [DCO](https://github.com/apps/dco) (preferred) or [CLA](https://github.com/cncf/cla) are enabled for all GitHub repositories of the project.
 - [ ] Ensure that that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced at the project's `README` on GitHub.
-- [ ] Ensure LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README` file).
 - [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
 - [ ] Provide emails for the maintainers to get access to the maintainers mailing list and Service Desk. Email them to <project-onboarding@cncf.io>.
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/).
 - [ ] Start on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
+
+## Websites
+
+_Note_, not all of these are applicable to all projects
+
+- [ ] Ensure website is
+  - [ ] [Hosted in an open source repo](https://github.com/cncf/techdocs/blob/main/docs/repo-setup.md)
+  - [ ] Hosted in the same organization as the main project
+  - [ ] Setup with [DCO](https://github.com/apps/dco) or CLA (DCO recommended)
+[CNCF's IP policy](https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy)
+requires all projects to use either CLA (Contributor License Agreements)
+or [DCO (Developer Certificate of Origin)](https://github.com/apps/dco).
+Unless there's a strong necessity to use CLA, we encourage projects to
+use DCO as it's easier to setup and use.
+- [ ] Ensure references to any origin companies are correct  
+  _Note_: It is OK to say that, e.g., “Prometheus was originally created by
+  Soundcloud” or “Kubernetes builds upon 15 years of experience of running
+  production workloads at Google,” but the origin company should not otherwise
+  be referred to on the project homepage.
+- [ ] No links or forms for capturing enterprise support leads should be present  
+  _Note_: It is fine to have an enterprise support, commercial partners, or similar page.
+  - [ ] If page is present, the companies list is alphabetized or randomized on load.
+  - [ ] If page is present, the vetting of companies listed is complete
+    _Note_: Projects are welcome to outsource this vetting to CNCF staff if this
+    becomes a burden.
+- [ ] Links to companies offering support go to a page that at least mentions 
+  support of the project
+- [ ] Ensure LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README` file).
+- [ ] CNCF Branding elements
+  - [ ] “We are a Cloud Native Computing Foundation project.” or “We are a Cloud
+    Native Computing Foundation sandbox project.” present (depending on
+    status)
+  - [ ] CNCF logo near the bottom of their project homepage
+  - [ ] (_Optionally_) Link to KubeCon + CloudNativeCon as the events approach
+- [ ] Page footer contents
+  - [ ] Trademark guidelines by either linking to Trademark Usage (directly or
+    via a "Terms of service" page), or by including the following text:<br/>
+    "The Linux Foundation® (TLF) has registered trademarks and uses
+    trademarks. For a list of TLF trademarks, see
+    [Trademark Usage](https://www.linuxfoundation.org/trademark-usage/)".
+
+### Community and license files
+
+The following files should be in the root of the website repository:
+
+- [ ] [CNCF Community Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md)
+- [ ] Guidelines for Contributors (CONTRIBUTING.md or similar)
+- [ ] [License file(s)](./repo-setup.md#license-files)
 
 ## CNCF staff tasks
 
@@ -55,3 +103,5 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 - [ ] Add a license scanning tool, like [FOSSA](https://fossa.com/) or [Snyk](https://snyk.io/).
 - [ ] Invite developers to the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel.
 - [ ] Send a welcome email to confirm maintainer list access.
+- [ ] Inform project of [mentorship opportunities](https://github.com/cncf/mentoring/), invite developers to [#mentoring](https://cloud-native.slack.com/archives/CGPK98JNQ) Slack channel.
+- [ ] Inform project of Technical Documentation support opportunities (TechDocs Analysis for incubating and graduated projects, TechDocs primer workshops for sandbox projects, training and other materials), invite developers to [#techdocs](https://cloud-native.slack.com/archives/CUJ6W5TLM) Slack channel.
