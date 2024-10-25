@@ -30,6 +30,7 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 - [ ] Move your project to its own separate neutral GitHub organization. This will make it transferable to the CNCF's GitHub Enterprise account. If it's already in a GHE account, you will need to remove it from that first.
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
 - [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help.
+- [ ] Join the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel.
 - [ ] Transfer [your domain to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/2/create/63). The "LF Stakeholder email" is <projects@cncf.io>.
 - [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements).
 - [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork.
@@ -53,5 +54,4 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 - [ ] Add the project to [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io) by updating [landscape.yml](https://github.com/cncf/landscape/blob/master/landscape.yml) following these [instructions](https://github.com/cncf/landscape2/blob/main/docs/config/data.yml).
 - [ ] Add a license scanning tool, like [FOSSA](https://fossa.com/) or [Snyk](https://snyk.io/).
-- [ ] Invite developers to the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel.
 - [ ] Send a welcome email to confirm maintainer list access.
