@@ -25,7 +25,7 @@ body:
   attributes:
     label: Project Description
     description: Provide a brief, 100-300 word description of the project that explains what it does and why it's needed.
-    placeholder: Describe what it does and why it's needed.
+    placeholder: Describe what the project does, why it's needed, and what gaps it fills in the cloud native ecosystem.
   validations:
     required: true
 - type: input
@@ -55,7 +55,7 @@ body:
     description: Provide the URL of the project's website. If the project has no website, please provide the primary repo URL again.
     placeholder: Add website URL here
   validations:
-    required: false
+    required: true
 - type: input
   attributes:
     label: Roadmap
@@ -66,9 +66,9 @@ body:
 - type: textarea
   attributes:
     label: Roadmap context
-    description:  You may optionally provide any details of the roadmap you feel are required for clarity.
+    description:  You may optionally provide any details of the roadmap and/or direction of the project you feel are required for clarity.
   validations:
-    required: false
+    required: true
 - type: input
   attributes:
     label: Contributing Guide
@@ -140,19 +140,19 @@ body:
     description: Please explain where you see the project "fitting" in the Cloud Native landscape. This should detail how the project is cloud native, which elements of cloud native the project embodies or exemplifies.
     placeholder: This project...
   validations:
-    required: false
+    required: true
 - type: textarea
   attributes:
     label: Cloud Native 'Integration'
     description: What CNCF projects does this project complement or depend on, and how?
   validations:
-    required: false
+    required: true
 - type: textarea
   attributes:
     label: Cloud Native Overlap
     description: What CNCF projects does this project overlap with, and how?
   validations:
-    required: false
+    required: true
 - type: textarea
   attributes:
     label: Similar projects
@@ -173,14 +173,14 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Project presentations
-    description: Has your project been presented to any TAG? If so, please link meeting notes and/or recordings as applicable.
+    label: Project Domain Technical Review
+    description: Has your project engaged with the domain specific TAG(s) to increase awareness through a presentation and/or completing the Day 0 portion of the [General Technical Review](https://github.com/cncf/toc/blob/main/tags/resources/toc-supporting-guides/general-technical-questions.md) questionnaire? If so, please link meeting notes, recordings and/or completed [General Technical Review](https://github.com/cncf/toc/blob/main/tags/resources/toc-supporting-guides/general-technical-questions.md) questionnaire as applicable.
   validations:
     required: false
 - type: textarea
   attributes:
-    label: Project champions
-    description: Please list any people who are part of CNCF leadership (TOC, TAGS, etc.) who can endorse or answer questions about your project.
+    label: CNCF Contacts
+    description: Please list any people who are part of CNCF leadership (TOC, TAGS, etc.) who are familiar with, and can questions about your project.
   validations:
     required: false
 - type: textarea
