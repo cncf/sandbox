@@ -180,7 +180,7 @@ body:
 - type: textarea
   attributes:
     label: CNCF Contacts
-    description: Please list any people who are part of CNCF leadership (TOC, TAGS, etc.) who are familiar with, and can questions about your project.
+    description: Please list any people who are part of CNCF leadership (TOC, TAGS, etc.) who are familiar with, and can answer questions about your project.
   validations:
     required: false
 - type: textarea
