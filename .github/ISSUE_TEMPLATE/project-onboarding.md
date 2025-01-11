@@ -18,13 +18,13 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 
 A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** further project onboarding tasks can be completed.
 
-- [ ] The [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
+- [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
 - [ ] Review and understand the [trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage).
 - [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement.
 
 ---
 
-## Review and understand
+## Review and understand other documents
 
 - [ ] The [Technical Leadership Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#technical-leadership-principles) that outlines the expected behavior for any maintainer in a leadership role.
 - [ ] The [project proposal process and requirements](https://github.com/cncf/toc/blob/main/process/README.md).
@@ -33,7 +33,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] The [online program guidelines](https://github.com/cncf/foundation/blob/main/online-programs-guidelines.md).
 - [ ] [Book time with CNCF staff](http://project-meetings.cncf.io) to understand project benefits and event resources.
 
-## Contribute and transfer
+## Contribute and transfer other materials
 
 - [ ] Move your project to its own separate neutral GitHub organization. This will make it transferable to the CNCF's GitHub Enterprise account. If it's already in a GHE account, you will need to remove it from that first.
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
@@ -43,7 +43,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork.
 - [ ] Transfer website analytics to <projects@cncf.io>. CNCF staff can help.
 
-## Update and document
+## Update and document project details
 
 - [ ] Ensure that [DCO](https://github.com/apps/dco) (preferred) or [CLA](https://github.com/cncf/cla) are enabled for all GitHub repositories of the project.
 - [ ] Ensure that that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced at the project's `README` on GitHub.
@@ -53,7 +53,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/).
 - [ ] Start on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
 
-## CNCF staff tasks
+## CNCF staff tasks to support the project
 
 - [ ] Add the project to [DevStats](https://devstats.cncf.io/).
 - [ ] Add the project to [CLOmonitor](https://clomonitor.io/).
