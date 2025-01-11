@@ -16,10 +16,11 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 
 ## REQUIRED BEFORE PROCEEDING WITH ONBOARDING
 
-Any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** further project onboarding tasks can be completed.
+A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** further project onboarding tasks can be completed.
 
+- [ ] The [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
 - [ ] Review and understand the [trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage).
-- [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements).
+- [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement.
 
 ---
 
@@ -28,7 +29,6 @@ Any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE
 - [ ] The [Technical Leadership Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#technical-leadership-principles) that outlines the expected behavior for any maintainer in a leadership role.
 - [ ] The [project proposal process and requirements](https://github.com/cncf/toc/blob/main/process/README.md).
 - [ ] The [services available for your project at the CNCF](https://contribute.cncf.io/resources/project-services/).
-- [ ] The [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
 - [ ] The [license allowlist](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md#approved-licenses-for-allowlist).
 - [ ] The [online program guidelines](https://github.com/cncf/foundation/blob/main/online-programs-guidelines.md).
 - [ ] [Book time with CNCF staff](http://project-meetings.cncf.io) to understand project benefits and event resources.
