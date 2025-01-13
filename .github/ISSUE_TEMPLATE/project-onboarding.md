@@ -31,6 +31,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] The [services available for your project at the CNCF](https://contribute.cncf.io/resources/project-services/).
 - [ ] The [license allowlist](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md#approved-licenses-for-allowlist).
 - [ ] The [online program guidelines](https://github.com/cncf/foundation/blob/main/online-programs-guidelines.md).
+- [ ] The [telemetry data collection and usage policy](https://www.linuxfoundation.org/legal/telemetry-data-policy).
 - [ ] [Book time with CNCF staff](http://project-meetings.cncf.io) to understand project benefits and event resources.
 
 ## Contribute and transfer other materials
