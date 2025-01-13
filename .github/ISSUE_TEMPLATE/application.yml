@@ -1,4 +1,4 @@
-name: Sandbox Application
+name: Sandbox application
 description: Apply for CNCF Sandbox
 title: "[Sandbox] <Project Name>"
 labels: [New]
@@ -6,7 +6,7 @@ body:
 - type: markdown
   attributes:
     value: |
-     Thanks for filling out a sandbox application. Please read the Sandbox guidelines and understand what the sandbox is along with the [minimal support and marketing expectations](https://contribute.cncf.io/resources/project-services/maturity-levels/#sandbox) for sandbox projects.
+     Thanks for filling out a Sandbox application. Please read the Sandbox guidelines and understand what the Sandbox is along with the [minimal support and marketing expectations](https://contribute.cncf.io/resources/project-services/maturity-levels/#sandbox) for Sandbox projects.
 - type: textarea
   attributes:
     label: Application contact emails
@@ -16,14 +16,14 @@ body:
     required: true
 - type: input
   attributes:
-    label: Project Summary
+    label: Project summary
     description: Provide a very brief, single line summary of the project.
     placeholder: One-line summary of the project
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Project Description
+    label: Project description
     description: Provide a brief, 100-300 word description of the project that explains what it does and why it's needed.
     placeholder: Describe what the project does, why it's needed, and what gaps it fills in the cloud native ecosystem.
   validations:
@@ -31,14 +31,14 @@ body:
 - type: input
   attributes:
     label: Org repo URL (provide if all repos under the org are in scope of the application)
-    description: Provide the URL of GitHub or Gitlab organization of the projects if all repos under the org are in scope of the application. If no organization, provide "N/A".
+    description: Provide the URL of GitHub or Gitlab organization of the projects if all repos under the org are in scope of the application. If no organization, write "N/A".
     placeholder: Add org URL here
   validations:
     required: true
 - type: input
   attributes:
     label: Project repo URL in scope of application
-    description: Provide the URL of the primary source code for the project. If there is no single repo but all repos under the org are in scope of the application, provide "N/A". If multiple repos (in addition to the primary repo) exist under an org, but not all are in scope, please enumerate in scope repos in the next question.
+    description: Provide the URL of the primary source code for the project. If there is no single repo but all repos under the org are in scope of the application, write "N/A". If multiple repos (in addition to the primary repo) exist under an org, but not all are in scope, please enumerate in scope repos in the next question.
     placeholder: Add code repo URL here
   validations:
     required: true
@@ -71,7 +71,7 @@ body:
     required: true
 - type: input
   attributes:
-    label: Contributing Guide
+    label: Contributing guide
     description: Provide the URL of the project's contribution guide. If the guide is embedded in another file, please deep link to the correct header.
     placeholder: Add Contributing guide URL here
   validations:
@@ -92,7 +92,7 @@ body:
     required: false
 - type: input
   attributes:
-    label: Contributing or Sponsoring Org
+    label: Contributing or sponsoring org
     description: Provide the URL of the project's contributing or sponsoring company/organization. If no such company/organization exists move on to the next question.
     placeholder: Add sponsoring company or org URL here
   validations:
@@ -107,11 +107,18 @@ body:
 - type: checkboxes
   id: ippolicy
   attributes:
-    label: IP Policy
+    label: IP policy
     description: By submitting this issue, you understand that if accepted, the project will be required to follow the CNCF IP Policy located at https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy
     options:
       - label: If the project is accepted, I agree the project will follow the CNCF IP Policy
         required: true
+- type: input
+  attributes:
+    label: Will the project require a license exception?
+    description: Does this project use a license other than [Apache 2.0 or one of the approved licenses on the CNCF Allowlist](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md#cncf-allowlist-license-policy)?. If no, write "N/A".
+    placeholder: Add details on whether this project uses a license that is not on the approved list and therefore may need an exception after joining the CNCF
+  validations:
+    required: true
 - type: checkboxes
   id: trademark
   attributes:
@@ -120,6 +127,13 @@ body:
     options:
       - label: If the project is accepted, I agree to donate all project trademarks and accounts to the CNCF
         required: true
+- type: input
+  attributes:
+    label: Standard or specification?
+    description: If this project is, or includes, a standard or specification, please provide details. If no, write "N/A".
+    placeholder: Add details on whether this project is, or includes, a standard or specification
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: Why CNCF?
@@ -129,34 +143,34 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Benefit to the Landscape
+    label: Benefit to the landscape
     description: How will adding this project benefit the CNCF landscape? What is the differentiator or enhancement this project provides to existing project, capabilities, or challenges within the landscape?
     placeholder: This project benefits the landscape by...
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Cloud Native 'Fit'
+    label: Cloud native 'fit'
     description: Please explain where you see the project "fitting" in the Cloud Native landscape. This should detail how the project is cloud native, which elements of cloud native the project embodies or exemplifies.
     placeholder: This project...
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Cloud Native 'Integration'
+    label: Cloud native 'integration'
     description: What CNCF projects does this project complement or depend on, and how?
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Cloud Native Overlap
+    label: Cloud native overlap
     description: What CNCF projects does this project overlap with, and how?
   validations:
     required: true
 - type: textarea
   attributes:
     label: Similar projects
-    description: Please list similar projects in the CNCF or elsewhere. If none exist, provide "N/A".
+    description: Please list similar projects in the CNCF or elsewhere. If none exist, write "N/A".
   validations:
     required: true
 - type: textarea
@@ -167,19 +181,19 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Business Product or Service to Project separation
-    description: If this project is identical (name, features, etc.) or closely related to one or more products or services of the sponsoring company/organization(s), how do you plan to separate this project from any products in terms of organization and development? If it is not related to a product or service, just provide "N/A".
+    label: Business product or service to project separation
+    description: If this project is identical (name, features, etc.) or closely related to one or more products or services of the sponsoring company/organization(s), how do you plan to separate this project from any products in terms of organization and development? If it is not related to a product or service, just write "N/A".
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Project Domain Technical Review
+    label: Project "Domain Technical Review"
     description: Has your project engaged with the domain specific TAG(s) to increase awareness through a presentation and/or completing the Day 0 portion of the [General Technical Review](https://github.com/cncf/toc/blob/main/tags/resources/toc-supporting-guides/general-technical-questions.md) questionnaire? If so, please link meeting notes, recordings and/or completed [General Technical Review](https://github.com/cncf/toc/blob/main/tags/resources/toc-supporting-guides/general-technical-questions.md) questionnaire as applicable.
   validations:
     required: false
 - type: textarea
   attributes:
-    label: CNCF Contacts
+    label: CNCF contacts
     description: Please list any people who are part of CNCF leadership (TOC, TAGS, etc.) who are familiar with, and can answer questions about your project.
   validations:
     required: false
