@@ -112,7 +112,7 @@ body:
     options:
       - label: If the project is accepted, I agree the project will follow the CNCF IP Policy
         required: true
-- type: input
+- type: textarea
   attributes:
     label: Will the project require a license exception?
     description: Does this project use a license other than [Apache 2.0 or one of the approved licenses on the CNCF Allowlist](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md#cncf-allowlist-license-policy)?. If no, write "N/A".
@@ -127,7 +127,7 @@ body:
     options:
       - label: If the project is accepted, I agree to donate all project trademarks and accounts to the CNCF
         required: true
-- type: input
+- type: textarea
   attributes:
     label: Standard or specification?
     description: If this project is, or includes, a standard or specification, please provide details. If no, write "N/A".
