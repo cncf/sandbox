@@ -19,8 +19,8 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** further project onboarding tasks can be completed.
 
 - [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
-- [ ] Review and understand the [trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage).
-- [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement.
+- [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage).
+- [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement. CNCF staff will send this to the contact emails listed in the Sandbox application.
 
 ---
 
@@ -47,7 +47,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 
 - [ ] Ensure that [DCO](https://github.com/apps/dco) (preferred) or [CLA](https://github.com/cncf/cla) are enabled for all GitHub repositories of the project.
 - [ ] Ensure that that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced at the project's `README.md` on GitHub.
-- [ ] Ensure LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file).
+- [ ] Ensure LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file). The project-specific footer text you should use will be provided in the Contribution Agreement instructions.
 - [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
 - [ ] Provide emails for the maintainers to get access to the maintainers mailing list and Service Desk. Email them to <project-onboarding@cncf.io>.
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
