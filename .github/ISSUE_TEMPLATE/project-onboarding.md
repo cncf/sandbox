@@ -40,7 +40,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
 - [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help.
 - [ ] Join the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel.
-- [ ] Transfer [your domain to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/63?requestGroup=19). The "LF Stakeholder email" is <projects@cncf.io>.
+- [ ] Transfer [your domain to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/63?requestGroup=19). The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
 - [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork.
 - [ ] Transfer website analytics to <projects@cncf.io>. CNCF staff can help.
 
