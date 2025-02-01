@@ -3,7 +3,7 @@ name: Project onboarding for projects
 about: Create a checklist of tasks for a project to complete the onboarding process
 title: "[PROJECT ONBOARDING] project"
 labels: project onboarding, sandbox
-assignees: caniszczyk, idvoretskyi, jeefy, krook, mrbobbytables, RobertKielty
+assignees: caniszczyk, idvoretskyi, jeefy, krook, mrbobbytables, RobertKielty, cynthia-sg, lukaszgryglicki
 ---
 
 # Welcome to CNCF Project Onboarding
@@ -16,10 +16,10 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 
 ## REQUIRED BEFORE PROCEEDING WITH ONBOARDING
 
-A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** further project onboarding tasks can be completed.
+A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** CNCF staff onboarding tasks can be completed.
 
 - [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy). Ensure you are using a CNCF compatible license; inbound projects must use the Apache 2.0 license or seek approval for exceptions. Licenses for dependencies are covered separately below.
-- [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage).
+- [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage). Let the TOC know if you plan to change your project name.
 - [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement. CNCF staff will send this document to the contact emails listed in the Sandbox application.
 
 ---
@@ -32,7 +32,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] The [dependency license allowlist](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md#approved-licenses-for-allowlist).
 - [ ] The [online program guidelines](https://github.com/cncf/foundation/blob/main/online-programs-guidelines.md).
 - [ ] The [telemetry data collection and usage policy](https://www.linuxfoundation.org/legal/telemetry-data-policy).
-- [ ] [Book time with CNCF staff](http://project-meetings.cncf.io) to understand project benefits and event resources.
+- [ ] Optional: [Book time with CNCF staff](http://project-meetings.cncf.io) to understand project benefits and event resources.
 
 ## Contribute and transfer other materials
 
