@@ -168,7 +168,7 @@ body:
 - type: textarea
   attributes:
     label: Business Product or Service to Project separation
-    description: If this project is related to one or more products or services of the sponsoring company/organization(s), please explain how you plan to separate this project from any products in terms or organization and development.  The project could be the "upstream" open source version of a product or service, be a required dependency, or be a key part of the infrastructure you use to develop your products/services.  If the project is completely unrelated to any product/service, please put "This project is unrelated to any product."
+    description: If this project is related to one or more products or services of the sponsoring company/organization(s), please explain how you plan to separate this project from any products in terms of organization and development.  The project could be the "upstream" open source version of a product or service, be a required dependency, or be a key part of the infrastructure you use to develop your products/services.  If the project is completely unrelated to any product/service, or the project contributor is not a business, please put "This project is unrelated to any product or service."
   validations:
     required: true
 - type: textarea
