@@ -16,7 +16,7 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 
 ## REQUIRED BEFORE PROCEEDING WITH ONBOARDING
 
-A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** CNCF staff onboarding tasks can be completed.
+A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** CNCF staff onboarding tasks can be completed. Other tasks can be done by projects in the meantime.
 
 - [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy). Ensure you are using a CNCF compatible license; inbound projects must use the Apache 2.0 license or seek approval for exceptions. Licenses for dependencies are covered separately below.
 - [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage). Let the TOC know if you plan to change your project name.
