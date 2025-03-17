@@ -12,11 +12,11 @@ This is an issue created to help onboard your project into the CNCF after the TO
 
 We would like your project to complete onboarding within **one** month of acceptance.
 
-Please track your progress by using "Quote reply" to create your own copy of this checklist in an issue, so that you can update the status as you finish items.
+Please track your progress by using "Quote reply" to create your own copy of this checklist in the issue, so that you can update the status as you finish items.
 
 ## REQUIRED BEFORE PROCEEDING WITH ONBOARDING
 
-A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** CNCF staff onboarding tasks can be completed. Other tasks can be done by projects in the meantime.
+A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** the CNCF staff onboarding tasks can be completed. Other tasks can be done by projects in the meantime.
 
 - [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy). Ensure you are using a CNCF compatible license; inbound projects must use the Apache 2.0 license or seek approval for exceptions. Licenses for dependencies are covered separately below.
 - [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage). Let the TOC know if you plan to change your project name.
@@ -40,9 +40,9 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
 - [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help.
 - [ ] Join the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel.
-- [ ] Transfer [your domain to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/63?requestGroup=19). The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
-- [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork.
-- [ ] Transfer website analytics to <projects@cncf.io>. CNCF staff can help.
+- [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/63?requestGroup=19) if they exist. The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
+- [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork if it exists.
+- [ ] Transfer website analytics to <projects@cncf.io> if they exist. CNCF staff can help.
 
 ## Update and document project details
 
