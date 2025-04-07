@@ -6,6 +6,9 @@ This repository is designed to allow projects seeking to join the CNCF as a :pac
 
 For information on the sandbox process please check out the [details on our sandbox application process below](#how-applications-are-reviewed).
 
+> [!NOTE]  
+> Projects which are primarily [Operators](https://www.cncf.io/blog/2022/06/15/kubernetes-operators-what-are-they-some-examples/) enabling another open source project to be Cloud Native should first contact that project about joining it as a subproject. If that isn't possible, please consider alternative foundations for membership as well, such as CommonHaus, SPI, or language based foundations such as the Rust Foundation.
+
 ## How to apply
 
 Applying is as easy as 1-2-3!
@@ -22,7 +25,7 @@ As we approach Sandbox application review meetings, CNCF staff will move applica
 
 ### Community Comments on Applications
 
-The TOC welcomes and appreciates community members support and exploration in surfacing items for technical consideration as part of sandbox applications, it allows the TOC to have a more comprehensive perspective on each projects' potential and supports our TAGs in understanding more about these projects. 
+The TOC welcomes and appreciates community members support and exploration in surfacing items for technical consideration as part of sandbox applications, it allows the TOC to have a more comprehensive perspective on each projects' potential and supports our TAGs in understanding more about these projects.
 
 In keeping with the [Technical Leadership Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#technical-leadership-principles), community members providing comments and questions should [be welcoming and curious in their comments](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#be-welcoming), [provide feedback with courtesy](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#provide-feedback-and-appreciation-appropriately), and [foster respectful resolution](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#foster-respectful-resolution).  Embodying the technical leadership principles as you comment on these applications directly contributes to sustaining the open, community-oriented nature of CNCF.
 
@@ -133,4 +136,4 @@ The TOC reviews and discusses Isobars. The TOC determines that Isobars is a *ver
 
 ## Acceptance
 
-Once projects are accepted into the Sandbox, CNCF staff will open a project onboarding issue for the project based on [project onboarding template](https://github.com/cncf/sandbox/blob/main/.github/ISSUE_TEMPLATE/project-onboarding.md) - this may take a few days to get created. If you would like to start looking at the items on that list now, then you will be ready when for when the issue is opened. 
+Once projects are accepted into the Sandbox, CNCF staff will open a project onboarding issue for the project based on [project onboarding template](https://github.com/cncf/sandbox/blob/main/.github/ISSUE_TEMPLATE/project-onboarding.md) - this may take a few days to get created. If you would like to start looking at the items on that list now, then you will be ready when for when the issue is opened.
