@@ -59,7 +59,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to [DevStats](https://devstats.cncf.io/).
 - [ ] Add the project to [CLOmonitor](https://clomonitor.io/).
 - [ ] Add the project to [LFX Insights](https://insights.lfx.linuxfoundation.org/). This is done by adding a read-only app to your GitHub organization once it's in CNCF GHE.
-- [ ] Add the project to [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io) by updating [landscape.yml](https://github.com/cncf/landscape/blob/master/landscape.yml) following these [instructions](https://github.com/cncf/landscape2/blob/main/docs/config/data.yml).
-- [ ] Add a license scanning tool, like [FOSSA](https://fossa.com/) or [Snyk](https://snyk.io/).
+- [ ] Activate the project to [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
+- [ ] Adopt a license scanning tool, like [FOSSA](https://fossa.com/) or [Snyk](https://snyk.io/).
 - [ ] Send a welcome email to confirm maintainer list access.
