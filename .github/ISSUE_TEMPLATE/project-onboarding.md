@@ -19,6 +19,7 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** the CNCF staff onboarding tasks can be completed. Other tasks can be done by projects in the meantime.
 
 - [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy). Ensure you are using a CNCF compatible license; inbound projects must use the Apache 2.0 license or seek approval for exceptions. Licenses for dependencies are covered separately below.
+- [ ] Review and understand the [CNCF Third Party License Policy](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md#cncf-allowlist-license-policy). This policy governs the licenses used by third party libraries in your project, CNCF FOSSA or CNCF Snyk are configured to check that projects are in compliance with this policy and you need to let us know which service you would prefer to use.
 - [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage). Let the TOC know if you plan to change your project name.
 - [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement. CNCF staff will send this document to the contact emails listed in the Sandbox application.
 
@@ -46,13 +47,14 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 
 ## Update and document project details
 
+- [ ] Provide emails for the maintainers to get access to the maintainers mailing list and Service Desk. Email them to <project-onboarding@cncf.io>.
 - [ ] Ensure that [DCO](https://github.com/apps/dco) (preferred) or [CLA](https://github.com/cncf/cla) are enabled for all GitHub repositories of the project.
 - [ ] Ensure that that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced at the project's `README.md` on GitHub.
 - [ ] Ensure LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file). The project-specific footer text you should use will be provided in the Contribution Agreement instructions.
 - [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
-- [ ] Provide emails for the maintainers to get access to the maintainers mailing list and Service Desk. Email them to <project-onboarding@cncf.io>.
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
 - [ ] Start on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
+- [ ] Import all project repos into your chosen license scanning service (CNCF FOSSA of CNCF Snyk) 
 
 ## CNCF staff tasks to support the project
 
@@ -61,5 +63,5 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to [LFX Insights](https://insights.lfx.linuxfoundation.org/). This is done by adding a read-only app to your GitHub organization once it's in CNCF GHE.
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io) by updating [landscape.yml](https://github.com/cncf/landscape/blob/master/landscape.yml) following these [instructions](https://github.com/cncf/landscape2/blob/main/docs/config/data.yml).
 - [ ] Activate the project to [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
-- [ ] Adopt a license scanning tool, like [FOSSA](https://fossa.com/) or [Snyk](https://snyk.io/).
+- [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or, CNCF [Snyk](https://snyk.io/) 
 - [ ] Send a welcome email to confirm maintainer list access.
