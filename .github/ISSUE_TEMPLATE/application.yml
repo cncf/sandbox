@@ -104,6 +104,13 @@ body:
     placeholder: Add maintainer URL here
   validations:
     required: true
+- type: input
+  attributes:
+    label: Security policy file
+    description: Provide the URL of the project's security policy file.
+    placeholder: Add security policy URL here
+  validations:
+    required: true
 - type: checkboxes
   id: ippolicy
   attributes:
