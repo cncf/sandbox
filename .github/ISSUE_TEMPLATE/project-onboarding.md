@@ -42,7 +42,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Join the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel to find and share knowledge with other project teams.
 - [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/63?requestGroup=19) if they exist. The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
 - [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork if it exists.
-- [ ] Transfer website analytics to <projects@cncf.io> if they exist. CNCF staff can help.
+- [ ] Transfer website analytics to <projects@cncf.io> if they exist. Once you have Service Desk access you can open a ticket.
 
 ## Update and document project details
 
