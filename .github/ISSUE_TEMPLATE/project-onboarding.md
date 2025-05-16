@@ -40,7 +40,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
 - [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help. This allows project communities to be more discoverable, allows the CNCF to enforce its Code of Conduct, and enables unlimited message retention.
 - [ ] Join the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel to find and share knowledge with other project teams.
-- [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/63?requestGroup=19) if they exist. The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
+- [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/1374) if they exist. The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
 - [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork if it exists. If you don't have artwork, CNCF can help design some.
 - [ ] Transfer website analytics to <projects@cncf.io> if they exist. Once you have Service Desk access you can open a ticket.
 
@@ -52,6 +52,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Ensure that that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced in the project's `README.md` on GitHub.
 - [ ] Ensure the LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file).
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
+- [ ] Start working on a [security policy](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository) and consider adding this to a `SECURITY.md` file at the root of your repo.
 - [ ] Start working on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
 - [ ] Import all project repos into your chosen license scanning service (CNCF FOSSA of CNCF Snyk).
 
