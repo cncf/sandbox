@@ -16,6 +16,13 @@ body:
     required: true
 - type: input
   attributes:
+    label: Contributing or sponsoring org
+    description: Provide the URL of the project's contributing or sponsoring company/organization. If no such company/organization exists, enter "individual" or "individuals". This is the entity that would complete the [Contribution Agreement](https://github.com/cncf/foundation/tree/main/agreements) which assigns trademarks (if any) and accounts to the Linux Foundation.
+    placeholder: Add sponsoring company or org name here or names of contributing individual(s)
+  validations:
+    required: false
+- type: input
+  attributes:
     label: Project summary
     description: Provide a very brief, single line summary of the project.
     placeholder: One-line summary of the project
@@ -88,13 +95,6 @@ body:
     label: Adopters
     description: Provide the URL of the project's Adopters file. If no file exists, move on to the next question.
     placeholder: Add Adopters URL here
-  validations:
-    required: false
-- type: input
-  attributes:
-    label: Contributing or sponsoring org
-    description: Provide the URL of the project's contributing or sponsoring company/organization. If no such company/organization exists move on to the next question.
-    placeholder: Add sponsoring company or org URL here
   validations:
     required: false
 - type: input
