@@ -9,16 +9,24 @@ body:
      Thanks for filling out a Sandbox application. Please read the Sandbox guidelines and understand what the Sandbox is along with the [minimal support and marketing expectations](https://contribute.cncf.io/resources/project-services/maturity-levels/#sandbox) for Sandbox projects.
 - type: textarea
   attributes:
-    label: Application contact emails
+    label: Application contact email(s)
     description: Provide the email address(es) of individuals who should be contacted regarding this application. If more than one email is provided, please comma separate them.
     placeholder: Comma-separate multiple emails here
   validations:
     required: true
-- type: input
+- type: checkboxes
+  id: trademark
   attributes:
-    label: Contributing or sponsoring entity
-    description: Provide the URL of the project's contributing or sponsoring company/organization. If no such company/organization exists, enter "individual" or "individuals". This is the entity that would complete the [Contribution Agreement](https://github.com/cncf/foundation/tree/main/agreements) which assigns trademarks (if any) and accounts to the Linux Foundation.
-    placeholder: Add sponsoring company or org name here or names of contributing individual(s)
+    label: Trademark and accounts
+    description: By submitting this issue, you understand that if accepted, all project trademarks (such as the project name) and accounts will be donated to the CNCF. For more information please refer to the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
+    options:
+      - label: If the project is accepted, I agree to donate all project trademarks and accounts to the CNCF
+        required: true
+- type: textarea
+  attributes:
+    label: Contributing or sponsoring entity contact email(s)
+    description: Provide the email address(es) of the project's contributing or sponsoring company/organization or group of individuals. This is the person or people that would sign the [Contribution Agreement](https://github.com/cncf/foundation/tree/main/agreements) which assigns trademarks (if any), domains, and accounts to the Linux Foundation.
+    placeholder: Comma-separate multiple emails here
   validations:
     required: true
 - type: input
@@ -126,14 +134,6 @@ body:
     placeholder: Add details on whether this project uses a license that is not on the approved list and therefore may need an exception after joining the CNCF
   validations:
     required: true
-- type: checkboxes
-  id: trademark
-  attributes:
-    label: Trademark and accounts
-    description: By submitting this issue, you understand that if accepted, all project trademarks (such as the project name) and accounts will be donated to the CNCF. For more information please refer to the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy).
-    options:
-      - label: If the project is accepted, I agree to donate all project trademarks and accounts to the CNCF
-        required: true
 - type: textarea
   attributes:
     label: Standard or specification?
