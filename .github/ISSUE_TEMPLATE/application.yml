@@ -195,7 +195,7 @@ body:
 - type: textarea
   attributes:
     label: Project "Domain Technical Review"
-    description: Has your project engaged with the domain specific TAG(s) to increase awareness through a presentation and/or completing the Day 0 portion of the [General Technical Review](https://github.com/cncf/toc/blob/main/tags/resources/toc-supporting-guides/general-technical-questions.md) questionnaire? If so, please link meeting notes, recordings and/or completed [General Technical Review](https://github.com/cncf/toc/blob/main/tags/resources/toc-supporting-guides/general-technical-questions.md) questionnaire as applicable.
+    description: Has your project engaged with the domain specific TAG(s) to increase awareness through a presentation and/or completing the Day 0 portion of the [General Technical Review](https://github.com/cncf/toc/blob/main/toc_subprojects/project-reviews-subproject/general-technical-questions.md) questionnaire? If so, please link meeting notes, recordings and/or completed [General Technical Review](https://github.com/cncf/toc/blob/main/toc_subprojects/project-reviews-subproject/general-technical-questions.md) questionnaire as applicable.
   validations:
     required: false
 - type: textarea
