@@ -64,4 +64,6 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io) by updating [landscape.yml](https://github.com/cncf/landscape/blob/master/landscape.yml) following these [instructions](https://github.com/cncf/landscape2/blob/main/docs/config/data.yml).
 - [ ] Activate the project in the [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
 - [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or CNCF [Snyk](https://snyk.io/).
+- [ ] Create groups.io project maintainer list in PCC
+- [ ] Add project's groups.io maintaner list to [maintainers@cncf.io](https://groups.google.com/a/cncf.io/g/maintainers/members)
 - [ ] Send a welcome email to confirm maintainer list access.
