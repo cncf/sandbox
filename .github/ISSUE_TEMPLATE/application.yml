@@ -115,7 +115,7 @@ body:
 - type: input
   attributes:
     label: Security policy file
-    description: Provide the URL of the project's security policy file.
+    description: Provide the URL of the project's security policy file. For additional information, please refer to these [guidelines](https://contribute.cncf.io/maintainers/security/security-guidelines/#3-securitymd) and [templates](https://github.com/cncf/tag-security/tree/main/community/resources/project-resources/templates).
     placeholder: Add security policy URL here
   validations:
     required: true
