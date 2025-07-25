@@ -3,7 +3,7 @@ name: Project onboarding for projects
 about: Create a checklist of tasks for a project to complete the onboarding process
 title: "[PROJECT ONBOARDING] project"
 labels: project onboarding, sandbox
-assignees: caniszczyk, idvoretskyi, jeefy, krook, mrbobbytables, RobertKielty, cynthia-sg, lukaszgryglicki
+assignees: caniszczyk, idvoretskyi, jeefy, krook, mrbobbytables, RobertKielty, cynthia-sg, lukaszgryglicki, riaankleinhans
 ---
 
 # Welcome to CNCF Project Onboarding
@@ -32,7 +32,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] The [services available for your project at the CNCF](https://contribute.cncf.io/resources/project-services/).
 - [ ] The [online program guidelines](https://github.com/cncf/foundation/blob/main/policies-guidance/online-programs-guidelines.md).
 - [ ] The [telemetry data collection and usage policy](https://www.linuxfoundation.org/legal/telemetry-data-policy).
-- [ ] Optional: [Book time with CNCF staff](http://project-meetings.cncf.io) to understand project benefits and event resources or ask other questions.
+- [ ] Optional: [Book time with CNCF staff](http://project-meetings.cncf.io) to understand CNCF resources available to you, to work through onboarding tasks together, or ask other questions.
 
 ## Contribute and transfer other materials
 
