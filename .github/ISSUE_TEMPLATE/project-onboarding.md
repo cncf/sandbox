@@ -66,4 +66,5 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or CNCF [Snyk](https://snyk.io/).
 - [ ] Create groups.io project maintainer list in PCC.
 - [ ] Add project's groups.io maintainer list to [maintainers@cncf.io](https://groups.google.com/a/cncf.io/g/maintainers/members)
+- [ ] Add project's groups.io cncf-sandbox-projects list to [cncf-sandbox-projects@cncf.io](https://groups.google.com/a/cncf.io/g/cncf-sandbox-projects)
 - [ ] Send a welcome email to confirm maintainer list access.
