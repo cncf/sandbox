@@ -1,0 +1,89 @@
+name: Vote Monitor and Onboarding Automation
+
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      process_existing:
+        description: 'Process existing issues with gitvote/passed label'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create-onboarding-issue:
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'issues' && github.event.label.name == 'gitvote/passed') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.process_existing == 'true')
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract project name and create onboarding issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { createOnboardingIssue, commentAndClose } = require('./scripts/create-onboarding-issue.js');
+            
+            if (context.eventName === 'workflow_dispatch') {
+              // Manual trigger - process existing issues
+              console.log('🔍 Processing existing issues with gitvote/passed label...');
+              
+              const issues = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                labels: 'gitvote/passed'
+              });
+              
+              console.log(`Found ${issues.data.length} issues with gitvote/passed label`);
+              
+              for (const issue of issues.data) {
+                const sandboxMatch = issue.title.match(/^\[Sandbox\]\s*(.+)$/);
+                if (!sandboxMatch) {
+                  console.log(`⚠️  Skipping issue #${issue.number} - not a sandbox issue`);
+                  continue;
+                }
+                
+                const projectName = sandboxMatch[1].trim();
+                console.log(`📝 Processing issue #${issue.number}: "${projectName}"`);
+                
+                try {
+                  const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
+                  await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
+                  console.log(`✅ Processed issue #${issue.number} -> created onboarding issue #${onboardingIssueNumber}`);
+                } catch (error) {
+                  console.error(`❌ Error processing issue #${issue.number}:`, error.message);
+                }
+              }
+              
+            } else {
+              // Label trigger - process single issue
+              const issue = context.payload.issue;
+              
+              console.log('🎉 Vote passed! Creating onboarding issue...');
+              console.log('Issue title:', issue.title);
+              console.log('Issue number:', issue.number);
+              
+              // Extract project name from issue title
+              const title = issue.title;
+              const sandboxMatch = title.match(/^\[Sandbox\]\s*(.+)$/);
+              const projectName = sandboxMatch ? sandboxMatch[1].trim() : 'Unknown Project';
+              
+              console.log('Extracted project name:', projectName);
+              
+              // Create the onboarding issue
+              const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
+              
+              // Comment and close the original issue
+              await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
+              
+              console.log(`✅ Successfully created onboarding issue #${onboardingIssueNumber} and closed issue #${issue.number}`);
+            }
