@@ -9,7 +9,7 @@ async function createOnboardingIssue(github, context, projectName, originalIssue
   // Extract YAML front matter to get assignees and labels
   const yamlMatch = templateContent.match(/^---\n([\s\S]*?)\n---\n/);
   let assignees = [];
-  let labels = ['project onboarding', 'sandbox'];
+  let labels = ['project onboarding', 'sandbox', 'contribution-agreement/unsigned'];
   
   if (yamlMatch) {
     const yamlContent = yamlMatch[1];
