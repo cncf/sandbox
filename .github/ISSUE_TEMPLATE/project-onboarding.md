@@ -2,7 +2,7 @@
 name: Project onboarding for projects
 about: Create a checklist of tasks for a project to complete the onboarding process
 title: "[PROJECT ONBOARDING] project"
-labels: project onboarding, sandbox
+labels: project onboarding, sandbox, contribution-agreement/unsigned
 assignees: caniszczyk, idvoretskyi, jeefy, krook, mrbobbytables, RobertKielty, cynthia-sg, lukaszgryglicki, riaankleinhans
 ---
 
