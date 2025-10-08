@@ -2,7 +2,7 @@
 
 ![CNCF Sandbox](https://raw.githubusercontent.com/cncf/artwork/main/other/cncf-sandbox/horizontal/color/cncf-sandbox-horizontal-color.png)
 
-This repository is designed to allow projects seeking to join the CNCF as a :package: [Sandbox](https://github.com/cncf/toc/blob/main/process/README.md) :package: project to submit their applications. It is still a work in progress and we welcome PRs on this repo to automate assignments, improve the process, etc.  If you have any questions, please reach out in the [TOC Slack Channel](https://cloud-native.slack.com/archives/C0MP69YF4) or file an [issue](https://github.com/cncf/sandbox/issues/new?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E) on the repo.
+This repository is designed to allow projects seeking to join the CNCF as a :package: [Sandbox](https://github.com/cncf/toc/blob/main/process/README.md) :package: project to submit their applications. It is still a work in progress and we welcome PRs on this repo to automate assignments, improve the process, etc.  If you have any questions, please reach out in the [TOC Slack Channel](https://cloud-native.slack.com/archives/C0MP69YF4) or file an [issue](https://github.com/cncf/sandbox/issues/new) on the repo.
 
 For information on the sandbox process please check out the [details on our sandbox application process below](#how-applications-are-reviewed).
 
@@ -13,7 +13,7 @@ For information on the sandbox process please check out the [details on our sand
 
 Applying is as easy as 1-2-3!
 
-1. Open a new [Sandbox Application](https://github.com/cncf/sandbox/issues/new?template=application.yml) using the linked issue form.
+1. Open a new [Sandbox Application](https://github.com/cncf/sandbox/issues/new?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E) using the linked issue form.
 1. Complete all sections of the form.
 1. Submit the issue.
 
