@@ -297,7 +297,7 @@ body:
 
   - type: textarea
     attributes:
-      label: Contributing or sponsoring entity contact information
+      label: Contributing or sponsoring entity signatory information
       description: Provide the email address(es) of the project's contributing or sponsoring company/organization or group of individuals. This is the person or people that would sign the [Contribution Agreement](https://github.com/cncf/foundation/blob/main/agreements/Sample%20Contribution%20Agreement%20(2025).pdf) which assigns trademarks (if any), domains, and accounts to the Linux Foundation.
       value: "If an organization:\n| Name | Address | Type (e.g., Delaware corporation) | Signatory name and title | Email address |\n|-----------|-----------|-----------|-----------|-----------|\n|            |            |            |            |            |\n\nOr, if an individual or individual(s):\n| Name | Country | Email address |\n|-----------|-----------|-----------|\n|            |            |            |\n|            |            |            |\n|            |            |            |"
     validations:
