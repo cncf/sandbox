@@ -1,0 +1,67 @@
+name: sandbox-onboarding-timeline-check
+
+# This workflow monitors sandbox project onboarding issues and applies progressive
+# warnings based on how long they've been open. It creates health issues in the TOC
+# repository when projects reach the 10-month milestone.
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  
+  workflow_dispatch:
+    # Allow manual triggering with optional parameters
+    inputs:
+      check_all:
+        description: 'Check all issues regardless of existing labels (for initial deployment)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  monitor-onboarding:
+    name: Monitor Onboarding Progress
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Run onboarding progress monitor
+        uses: actions/github-script@v7
+        env:
+          MONITOR_TOKEN: ${{ secrets.ONBOARDING_MONITOR_TOKEN }}
+        with:
+          github-token: ${{ secrets.ONBOARDING_MONITOR_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Load the monitoring script
+            const scriptPath = path.join(process.env.GITHUB_WORKSPACE, 'scripts', 'onboarding-progress-monitor.js');
+            const monitorScript = require(scriptPath);
+            
+            // Determine if we should check all issues
+            const checkAll = '${{ github.event.inputs.check_all }}' === 'true';
+            
+            console.log('🚀 Starting Onboarding Progress Monitor');
+            console.log(`   Mode: ${checkAll ? 'CHECK ALL (initial deployment)' : 'REGULAR (skip processed)'}`);
+            console.log(`   Time: ${new Date().toISOString()}`);
+            console.log(`   Triggered by: ${context.eventName}`);
+            
+            try {
+              await monitorScript.monitorOnboardingProgress(github, context, checkAll);
+              console.log('✅ Monitoring completed successfully');
+            } catch (error) {
+              console.error('❌ Monitoring failed:', error);
+              core.setFailed(error.message);
+            }

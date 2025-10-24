@@ -137,3 +137,14 @@ The TOC reviews and discusses Isobars. The TOC determines that Isobars is a *ver
 ## Acceptance
 
 Once projects are accepted into the Sandbox, CNCF staff will open a project onboarding issue for the project based on [project onboarding template](https://github.com/cncf/sandbox/blob/main/.github/ISSUE_TEMPLATE/project-onboarding.md) - this may take a few days to get created. If you would like to start looking at the items on that list now, then you will be ready when for when the issue is opened.
+
+---
+
+## Automation
+
+This repository includes GitHub Actions workflows to automate the sandbox onboarding process:
+
+- **Vote Monitor:** Automatically creates onboarding issues when applications pass voting
+- **Onboarding Progress Monitor:** Tracks onboarding progress and creates health issues in the TOC repository
+
+For detailed documentation, see [Workflows README](.github/workflows/README.md).
