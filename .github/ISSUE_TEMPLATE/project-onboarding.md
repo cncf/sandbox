@@ -54,7 +54,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
 - [ ] Start working on a [security policy](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository) and consider adding this to a `SECURITY.md` file at the root of your repo.
 - [ ] Start working on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
-- [ ] Import all project repos into your chosen license scanning service (CNCF FOSSA of CNCF Snyk).
+- [ ] Import all project repos into your chosen license scanning service (CNCF FOSSA or CNCF Snyk).
 
 ## CNCF staff tasks to support the project
 
