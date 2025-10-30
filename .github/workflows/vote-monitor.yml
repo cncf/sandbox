@@ -2,13 +2,13 @@ name: Vote Monitor and Onboarding Automation
 
 on:
   issues:
-    types: [labeled]
+    types: [labeled, unlabeled]
   workflow_dispatch:
     inputs:
       process_existing:
         description: 'Process existing issues with gitvote/passed label'
         required: false
-        default: 'false'
+        default: false
         type: boolean
 
 permissions:
@@ -19,7 +19,7 @@ jobs:
   create-onboarding-issue:
     runs-on: ubuntu-latest
     if: |
-      (github.event_name == 'issues' && github.event.label.name == 'gitvote/passed') ||
+      (github.event_name == 'issues' && (github.event.action == 'labeled' || github.event.action == 'unlabeled')) ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.process_existing == 'true')
     
     steps:
@@ -55,6 +55,19 @@ jobs:
                 const projectName = sandboxMatch[1].trim();
                 console.log(`📝 Processing issue #${issue.number}: "${projectName}"`);
                 
+                const hasUnsignedCLA = (issue.labels || []).some(l => (typeof l === 'string' ? l : l.name) === 'contribution-agreement/unsigned');
+
+                if (hasUnsignedCLA) {
+                  console.log(`⏸️  Issue #${issue.number} has contribution-agreement/unsigned; posting CLA reminder and skipping onboarding creation.`);
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contributor License Agreement (CLA). This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
+                  });
+                  continue;
+                }
+
                 try {
                   const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
                   await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
@@ -65,25 +78,42 @@ jobs:
               }
               
             } else {
-              // Label trigger - process single issue
+              // Label add/remove trigger - process single issue based on current labels
               const issue = context.payload.issue;
-              
-              console.log('🎉 Vote passed! Creating onboarding issue...');
-              console.log('Issue title:', issue.title);
-              console.log('Issue number:', issue.number);
-              
+
+              // Ensure we only proceed for Sandbox issues with a passed vote
+              const labels = issue.labels || [];
+              const labelNames = labels.map(l => (typeof l === 'string' ? l : l.name));
+              const hasVotePassed = labelNames.includes('gitvote/passed');
+              const hasUnsignedCLA = labelNames.includes('contribution-agreement/unsigned');
+
+              if (!hasVotePassed) {
+                console.log('ℹ️  Skipping: issue does not have gitvote/passed label.');
+                return;
+              }
+
               // Extract project name from issue title
               const title = issue.title;
               const sandboxMatch = title.match(/^\[Sandbox\]\s*(.+)$/);
-              const projectName = sandboxMatch ? sandboxMatch[1].trim() : 'Unknown Project';
-              
-              console.log('Extracted project name:', projectName);
-              
-              // Create the onboarding issue
+              if (!sandboxMatch) {
+                console.log('ℹ️  Skipping: not a Sandbox application issue.');
+                return;
+              }
+              const projectName = sandboxMatch[1].trim();
+
+              if (hasUnsignedCLA) {
+                console.log('⏸️  CLA unsigned label present; posting reminder and not creating onboarding.');
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contributor License Agreement (CLA). This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
+                });
+                return;
+              }
+
+              console.log('🎉 Vote passed and CLA requirement satisfied. Creating onboarding issue...');
               const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
-              
-              // Comment and close the original issue
               await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
-              
               console.log(`✅ Successfully created onboarding issue #${onboardingIssueNumber} and closed issue #${issue.number}`);
             }
