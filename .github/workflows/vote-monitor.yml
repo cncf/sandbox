@@ -58,7 +58,7 @@ jobs:
                 const hasUnsignedCLA = (issue.labels || []).some(l => (typeof l === 'string' ? l : l.name) === 'contribution-agreement/unsigned');
 
                 if (hasUnsignedCLA) {
-                  console.log(`⏸️  Issue #${issue.number} has contribution-agreement/unsigned; posting CLA reminder and skipping onboarding creation.`);
+                  console.log(`⏸️  Issue #${issue.number} has contribution-agreement/unsigned; posting CA reminder and skipping onboarding creation.`);
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -102,7 +102,7 @@ jobs:
               const projectName = sandboxMatch[1].trim();
 
               if (hasUnsignedCLA) {
-                console.log('⏸️  CLA unsigned label present; posting reminder and not creating onboarding.');
+                console.log('⏸️  CA unsigned label present; posting reminder and not creating onboarding.');
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
@@ -112,7 +112,7 @@ jobs:
                 return;
               }
 
-              console.log('🎉 Vote passed and CLA requirement satisfied. Creating onboarding issue...');
+              console.log('🎉 Vote passed and CA requirement satisfied. Creating onboarding issue...');
               const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
               await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
               console.log(`✅ Successfully created onboarding issue #${onboardingIssueNumber} and closed issue #${issue.number}`);
