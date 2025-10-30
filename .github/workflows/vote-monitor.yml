@@ -62,8 +62,8 @@ jobs:
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    issue_number: issue.number,
-                    body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contributor License Agreement (CLA). This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
+                  issue_number: issue.number,
+                  body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contribution Agreement. This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
                   });
                   continue;
                 }
@@ -107,7 +107,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contributor License Agreement (CLA). This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
+                  body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contribution Agreement. This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
                 });
                 return;
               }
