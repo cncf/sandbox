@@ -55,7 +55,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
 - [ ] Start working on a [security policy](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository) and consider adding this to a `SECURITY.md` file at the root of your repo.
 - [ ] Start working on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
-- [ ] add either fossa or snyk labels to this issue based on you prefernce to use either service. This will start processes to invite maintainers to join CNCF dedicated FOSSA and Snyk services.
+- [ ] add either fossa or snyk labels to this issue based on your preference to use either service. This will start processes to invite maintainers to join CNCF dedicated FOSSA and Snyk services.
 - [ ] Import all project repos into your chosen license scanning service (after we have on-boarded maintainers as new CNCF FOSSA or CNCF Snyk users. Note that we use CNCF service instances as they are pre-configured to check compliance with the CNCF Allowlist License Policy and CNCF Staff have access to assist you with license issues reported by these services).
 
 
