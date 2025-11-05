@@ -55,9 +55,9 @@ jobs:
                 const projectName = sandboxMatch[1].trim();
                 console.log(`📝 Processing issue #${issue.number}: "${projectName}"`);
                 
-                const hasUnsignedCLA = (issue.labels || []).some(l => (typeof l === 'string' ? l : l.name) === 'contribution-agreement/unsigned');
+                const hasUnsignedCA = (issue.labels || []).some(l => (typeof l === 'string' ? l : l.name) === 'contribution-agreement/unsigned');
 
-                if (hasUnsignedCLA) {
+                if (hasUnsignedCA) {
                   console.log(`⏸️  Issue #${issue.number} has contribution-agreement/unsigned; posting CA reminder and skipping onboarding creation.`);
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
@@ -85,7 +85,7 @@ jobs:
               const labels = issue.labels || [];
               const labelNames = labels.map(l => (typeof l === 'string' ? l : l.name));
               const hasVotePassed = labelNames.includes('gitvote/passed');
-              const hasUnsignedCLA = labelNames.includes('contribution-agreement/unsigned');
+              const hasUnsignedCA = labelNames.includes('contribution-agreement/unsigned');
 
               if (!hasVotePassed) {
                 console.log('ℹ️  Skipping: issue does not have gitvote/passed label.');
@@ -101,7 +101,7 @@ jobs:
               }
               const projectName = sandboxMatch[1].trim();
 
-              if (hasUnsignedCLA) {
+              if (hasUnsignedCA) {
                 console.log('⏸️  CA unsigned label present; posting reminder and not creating onboarding.');
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
