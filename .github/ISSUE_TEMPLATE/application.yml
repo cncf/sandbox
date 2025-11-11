@@ -2,7 +2,7 @@
 name: Sandbox application
 description: Apply for CNCF Sandbox
 title: "[Sandbox] <Project Name>"
-labels: [New]
+labels: ["New", "contribution-agreement/unsigned"]
 body:
   - type: markdown
     attributes:
@@ -30,14 +30,13 @@ body:
 
         Based on the information in this form, a Contribution Agreement will be sent to the contacts provided. **This must be signed before the Technical Oversight Committee (TOC) votes on whether to accept the project.** It will be countersigned by the Linux Foundation only after a successful vote.
 
-
         <br />
 
         ---
 
         # Sandbox Application form
 
-        Please fill out the form below as completely as possible. This information will help facilitate the review by the CNCF TOC and a Technical Advisory Group (TAG) by minimizing follow-up questions.
+        Please fill out the form below as completely as possible. This information will help facilitate the review by the CNCF TOC and a Technical Advisory Group (TAG) by minimizing follow-up questions. Members of the TOC or TAG may post their follow-up questions as comments on this issue.
 
   - type: markdown
     attributes:
