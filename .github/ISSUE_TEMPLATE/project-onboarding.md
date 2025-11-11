@@ -63,6 +63,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to [LFX Insights](https://insights.linuxfoundation.org/).
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io).
 - [ ] Activate the project in the [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
+- [ ] Add the LFX Slug (`lfx_slug`) in the [landscape configuration](https://github.com/cncf/landscape/blob/master/landscape.yml). The slug can be found in [LFX Project Control Center app](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE) in Project Definition section of the corresponding project.
 - [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or CNCF [Snyk](https://snyk.io/).
 - [ ] Create groups.io project maintainer list in PCC.
 - [ ] Add project's groups.io maintainer list to [maintainers@cncf.io](https://groups.google.com/a/cncf.io/g/maintainers/members)
