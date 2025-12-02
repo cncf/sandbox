@@ -9,8 +9,12 @@ const path = require('path');
  * @returns {Promise<{exists: boolean, issueNumber: number|null, state: string|null}>}
  */
 async function checkExistingOnboardingIssue(github, context, projectName) {
+  // Escape special characters that could affect GitHub search query
+  // GitHub search special characters: " \ + - & | ! ( ) { } [ ] ^ ~ * ? :
+  const sanitizedProjectName = projectName.replace(/["\\]/g, '\\$&');
+  
   // Search for existing onboarding issues (both open and closed) with title matching [PROJECT ONBOARDING] {projectName}
-  const searchQuery = `repo:${context.repo.owner}/${context.repo.repo} is:issue "[PROJECT ONBOARDING] ${projectName}" in:title`;
+  const searchQuery = `repo:${context.repo.owner}/${context.repo.repo} is:issue "[PROJECT ONBOARDING] ${sanitizedProjectName}" in:title`;
   
   console.log(`🔍 Searching for existing onboarding issues with query: ${searchQuery}`);
   
@@ -24,6 +28,8 @@ async function checkExistingOnboardingIssue(github, context, projectName) {
   console.log(`   Found ${searchResults.data.total_count} matching issues`);
   
   // Check if any of the results have the exact title match
+  // Note: GitHub search with quotes finds the phrase within the title, but may return partial matches.
+  // We need to verify exact title match to avoid false positives.
   for (const issue of searchResults.data.items) {
     const expectedTitle = `[PROJECT ONBOARDING] ${projectName}`;
     if (issue.title === expectedTitle) {
