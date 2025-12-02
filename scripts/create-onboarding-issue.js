@@ -1,7 +1,61 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Check if an onboarding issue already exists for a project
+ * @param {Object} github - GitHub API client
+ * @param {Object} context - GitHub context
+ * @param {string} projectName - Name of the project
+ * @returns {Promise<{exists: boolean, issueNumber: number|null, state: string|null}>}
+ */
+async function checkExistingOnboardingIssue(github, context, projectName) {
+  // Search for existing onboarding issues (both open and closed) with title matching [PROJECT ONBOARDING] {projectName}
+  const searchQuery = `repo:${context.repo.owner}/${context.repo.repo} is:issue "[PROJECT ONBOARDING] ${projectName}" in:title`;
+  
+  console.log(`🔍 Searching for existing onboarding issues with query: ${searchQuery}`);
+  
+  const searchResults = await github.rest.search.issuesAndPullRequests({
+    q: searchQuery,
+    sort: 'created',
+    order: 'desc',
+    per_page: 10
+  });
+  
+  console.log(`   Found ${searchResults.data.total_count} matching issues`);
+  
+  // Check if any of the results have the exact title match
+  for (const issue of searchResults.data.items) {
+    const expectedTitle = `[PROJECT ONBOARDING] ${projectName}`;
+    if (issue.title === expectedTitle) {
+      console.log(`   ✅ Found existing onboarding issue #${issue.number} (state: ${issue.state})`);
+      return {
+        exists: true,
+        issueNumber: issue.number,
+        state: issue.state
+      };
+    }
+  }
+  
+  console.log(`   No existing onboarding issue found for "${projectName}"`);
+  return {
+    exists: false,
+    issueNumber: null,
+    state: null
+  };
+}
+
 async function createOnboardingIssue(github, context, projectName, originalIssueNumber) {
+  // Check if an onboarding issue already exists for this project
+  const existing = await checkExistingOnboardingIssue(github, context, projectName);
+  
+  if (existing.exists) {
+    console.log(`⚠️  Onboarding issue already exists for "${projectName}": #${existing.issueNumber} (${existing.state})`);
+    return {
+      issueNumber: existing.issueNumber,
+      alreadyExists: true,
+      state: existing.state
+    };
+  }
   // Read the onboarding template
   const templatePath = path.join(process.cwd(), '.github/ISSUE_TEMPLATE/project-onboarding.md');
   let templateContent = fs.readFileSync(templatePath, 'utf8');
@@ -53,7 +107,11 @@ async function createOnboardingIssue(github, context, projectName, originalIssue
             });
   
   console.log('Created onboarding issue:', onboardingIssue.data.number);
-  return onboardingIssue.data.number;
+  return {
+    issueNumber: onboardingIssue.data.number,
+    alreadyExists: false,
+    state: 'open'
+  };
 }
 
 async function commentAndClose(github, context, originalIssueNumber, onboardingIssueNumber, projectName) {
@@ -88,5 +146,6 @@ Good luck with your project's journey in the CNCF! 🚀`
 
 module.exports = {
   createOnboardingIssue,
-  commentAndClose
+  commentAndClose,
+  checkExistingOnboardingIssue
 };

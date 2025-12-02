@@ -69,9 +69,13 @@ jobs:
                 }
 
                 try {
-                  const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
-                  await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
-                  console.log(`✅ Processed issue #${issue.number} -> created onboarding issue #${onboardingIssueNumber}`);
+                  const result = await createOnboardingIssue(github, context, projectName, issue.number);
+                  if (result.alreadyExists) {
+                    console.log(`⏭️  Skipped creating onboarding issue for #${issue.number} - already exists: #${result.issueNumber} (${result.state})`);
+                    continue;
+                  }
+                  await commentAndClose(github, context, issue.number, result.issueNumber, projectName);
+                  console.log(`✅ Processed issue #${issue.number} -> created onboarding issue #${result.issueNumber}`);
                 } catch (error) {
                   console.error(`❌ Error processing issue #${issue.number}:`, error.message);
                 }
@@ -113,7 +117,11 @@ jobs:
               }
 
               console.log('🎉 Vote passed and CA requirement satisfied. Creating onboarding issue...');
-              const onboardingIssueNumber = await createOnboardingIssue(github, context, projectName, issue.number);
-              await commentAndClose(github, context, issue.number, onboardingIssueNumber, projectName);
-              console.log(`✅ Successfully created onboarding issue #${onboardingIssueNumber} and closed issue #${issue.number}`);
+              const result = await createOnboardingIssue(github, context, projectName, issue.number);
+              if (result.alreadyExists) {
+                console.log(`⏭️  Onboarding issue already exists for "${projectName}": #${result.issueNumber} (${result.state})`);
+                return;
+              }
+              await commentAndClose(github, context, issue.number, result.issueNumber, projectName);
+              console.log(`✅ Successfully created onboarding issue #${result.issueNumber} and closed issue #${issue.number}`);
             }
