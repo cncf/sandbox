@@ -17,6 +17,9 @@ Applying is as easy as 1-2-3!
 1. Complete all sections of the form.
 1. Submit the issue.
 
+> [!CAUTION]
+> The TOC MUST vote to approve your application and a Contribution Agreement MUST be signed before your project can be considered an official CNCF project. You can not represent your project as "donated" or "contributed" until those steps are completed. Please read more below.
+
 ## What's next?
 
 Your project's application is placed in the backlog for triaging. You can view the status of your application and others at anytime by checking out our [Project Board](https://github.com/orgs/cncf/projects/14).
