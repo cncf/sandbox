@@ -28,7 +28,10 @@ body:
         - **Additional information** - Any other details about the project that can help inform the review.
 
 
-        Based on the information in this form, a Contribution Agreement will be sent to the contacts provided. **This must be signed before the Technical Oversight Committee (TOC) votes on whether to accept the project.** It will be countersigned by the Linux Foundation only after a successful vote.
+        Based on the information in this form, a Contribution Agreement will be sent to the contacts provided. **This must be signed before the Technical Oversight Committee (TOC) can complete a vote on whether to accept the project.** It will be countersigned by the Linux Foundation only after a successful vote.
+
+        > [!CAUTION]
+        > The TOC MUST vote to approve your application and a Contribution Agreement MUST be signed before your project can be considered an official CNCF project. You can not represent your project as "donated" or "contributed" until those steps are completed.
 
         <br />
 
