@@ -19,7 +19,7 @@ Please track your progress by using "Quote reply" to create your own copy of thi
 A "Project Contribution Agreement" must be completed and any existing trademarks **MUST** be transferred to the Linux Foundation **BEFORE** the CNCF staff onboarding tasks can be completed. Other tasks can be done by projects themselves in the meantime.
 
 - [ ] Review and understand the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy). Ensure you are using a CNCF compatible license; inbound projects must use the Apache 2.0 license. Licenses for dependencies are covered separately below.
-- [ ] Review and understand the [CNCF Third Party License Policy](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md#cncf-allowlist-license-policy). This policy governs the licenses used by third party libraries in your project. CNCF FOSSA or CNCF Snyk are configured to check that projects are in compliance with this policy. Let us know which service you would prefer to use.
+- [ ] Review and understand the [CNCF Allowlist License Policy](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md#cncf-allowlist-license-policy). This policy governs the licenses used by third-party libraries in your project. The CNCF have FOSSA and Snyk service instances that are configured to check that your project repos are in compliance with this policy. See below for onboarding instructions.
 - [ ] Review and understand the [LF trademark guidelines](https://www.linuxfoundation.org/legal/trademark-usage). Let the TOC know if you plan to change your project name.
 - [ ] Transfer any [trademark and logo assets to the Linux Foundation](https://github.com/cncf/foundation/tree/main/agreements) via the Contribution Agreement. CNCF staff will send this document to the contact emails listed in the Sandbox application.
 
@@ -47,14 +47,17 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 ## Update and document project details
 
 - [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
-- [ ] Provide maintainer emails to get access to the mailing list and Service Desk. Send them to <project-onboarding@cncf.io>. These aren't shared publicly in the spreadsheet above which is why they must be emailed to us.
+- [ ] Provide maintainer emails to get access to the mailing list, the Service Desk and FOSSA or Snyk. Send them to <project-onboarding@cncf.io>. These aren't shared publicly in the spreadsheet above which is why they must be emailed to us.
+- [ ] Let us know which of our license checking services you would prefer to use. Label this issue with 'fossa' if you want to use CNCF FOSSA or add the label 'snyk' if you want to use CNCF Snyk. You do NOT need to setup user accounts on these services, we will do that for you.
 - [ ] Ensure that [DCO](https://github.com/apps/dco) are enabled for all GitHub repositories of the project. You may also choose to use a [CLA](https://github.com/cncf/cla).
 - [ ] Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced in the project's `README.md` on GitHub.
 - [ ] Ensure the LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/policies-guidance/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file).
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
 - [ ] Start working on a [security policy](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository) and consider adding this to a `SECURITY.md` file at the root of your repo.
 - [ ] Start working on an [OpenSSF Best Practices Badge](https://www.bestpractices.dev/en).
-- [ ] Import all project repos into your chosen license scanning service (CNCF FOSSA or CNCF Snyk).
+- [ ] add either fossa or snyk labels to this issue based on your preference to use either service. This will start processes to invite maintainers to join CNCF dedicated FOSSA and Snyk services.
+- [ ] Import all project repos into your chosen license scanning service (after we have on-boarded maintainers as new CNCF FOSSA or CNCF Snyk users. Note that we use CNCF service instances as they are pre-configured to check compliance with the CNCF Allowlist License Policy and CNCF Staff have access to assist you with license issues reported by these services).
+
 
 ## CNCF staff tasks to support the project
 
@@ -63,7 +66,6 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to [LFX Insights](https://insights.linuxfoundation.org/).
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io).
 - [ ] Activate the project in the [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
-- [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or CNCF [Snyk](https://snyk.io/).
 - [ ] Create groups.io project maintainer list in PCC.
 - [ ] Add project's groups.io maintainer list to [maintainers@cncf.io](https://groups.google.com/a/cncf.io/g/maintainers/members)
 - [ ] Add project's groups.io cncf-sandbox-projects list to [cncf-sandbox-projects@cncf.io](https://groups.google.com/a/cncf.io/g/cncf-sandbox-projects)
