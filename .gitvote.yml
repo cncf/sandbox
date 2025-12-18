@@ -1,4 +1,6 @@
 # Example file: https://github.com/cncf/gitvote/blob/main/docs/config/.gitvote.yml
+audit:
+  enabled: true
 profiles:
   default:
     duration: 13w
