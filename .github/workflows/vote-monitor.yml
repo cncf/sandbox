@@ -15,6 +15,10 @@ permissions:
   issues: write
   contents: read
 
+concurrency:
+  group: vote-monitor-${{ github.event.issue.number || 'manual' }}
+  cancel-in-progress: true
+
 jobs:
   create-onboarding-issue:
     runs-on: ubuntu-latest
@@ -58,12 +62,32 @@ jobs:
                 const hasUnsignedCA = (issue.labels || []).some(l => (typeof l === 'string' ? l : l.name) === 'contribution-agreement/unsigned');
 
                 if (hasUnsignedCA) {
-                  console.log(`⏸️  Issue #${issue.number} has contribution-agreement/unsigned; posting CA reminder and skipping onboarding creation.`);
+                  console.log(`⏸️  Issue #${issue.number} has contribution-agreement/unsigned; checking for existing comment before posting reminder.`);
+                  
+                  // Check if a similar comment already exists
+                  const comments = await github.rest.issues.listComments({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number
+                  });
+                  
+                  const caReminderText = `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contribution Agreement.`;
+                  const hasExistingComment = comments.data.some(comment => 
+                    comment.body.includes(caReminderText) || 
+                    comment.body.includes('Please finalize the Contribution Agreement')
+                  );
+                  
+                  if (hasExistingComment) {
+                    console.log(`⏭️  Issue #${issue.number} already has CA reminder comment; skipping duplicate.`);
+                    continue;
+                  }
+                  
+                  console.log(`📝 Posting CA reminder comment for issue #${issue.number}.`);
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                  issue_number: issue.number,
-                  body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contribution Agreement. This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
+                    issue_number: issue.number,
+                    body: `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contribution Agreement. This is required before official CNCF on-boarding can begin. Please reach out to CNCF Staff for assistance.`
                   });
                   continue;
                 }
@@ -84,6 +108,13 @@ jobs:
             } else {
               // Label add/remove trigger - process single issue based on current labels
               const issue = context.payload.issue;
+
+              // Only proceed if gitvote/passed label was just added (not removed or other label changes)
+              const eventLabel = context.payload.label?.name;
+              if (context.event.action !== 'labeled' || eventLabel !== 'gitvote/passed') {
+                console.log(`ℹ️  Skipping: event is not for gitvote/passed label being added (action: ${context.event.action}, label: ${eventLabel}).`);
+                return;
+              }
 
               // Ensure we only proceed for Sandbox issues with a passed vote
               const labels = issue.labels || [];
@@ -106,7 +137,27 @@ jobs:
               const projectName = sandboxMatch[1].trim();
 
               if (hasUnsignedCA) {
-                console.log('⏸️  CA unsigned label present; posting reminder and not creating onboarding.');
+                console.log('⏸️  CA unsigned label present; checking for existing comment before posting reminder.');
+                
+                // Check if a similar comment already exists
+                const comments = await github.rest.issues.listComments({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number
+                });
+                
+                const caReminderText = `The TOC vote for ${projectName} has passed! 🎉 Next step: Please finalize the Contribution Agreement.`;
+                const hasExistingComment = comments.data.some(comment => 
+                  comment.body.includes(caReminderText) || 
+                  comment.body.includes('Please finalize the Contribution Agreement')
+                );
+                
+                if (hasExistingComment) {
+                  console.log('⏭️  CA reminder comment already exists; skipping duplicate comment.');
+                  return;
+                }
+                
+                console.log('📝 Posting CA reminder comment.');
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
