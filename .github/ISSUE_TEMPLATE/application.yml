@@ -241,7 +241,7 @@ body:
   - type: textarea
     attributes:
       label: Insights
-      description: Are you already listed [LFX Insights](https://insights.linuxfoundation.org/)?
+      description: Are you already listed on [LFX Insights](https://insights.linuxfoundation.org/)?
     validations:
       required: true
 
