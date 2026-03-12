@@ -238,6 +238,13 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    attributes:
+      label: Insights
+      description: Are you already listed [LFX Insights](https://insights.linuxfoundation.org/)?
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |
