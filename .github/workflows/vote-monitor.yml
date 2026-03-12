@@ -110,9 +110,10 @@ jobs:
               const issue = context.payload.issue;
 
               // Only proceed if gitvote/passed label was just added (not removed or other label changes)
-              const eventLabel = context.payload.label?.name;
-              if (context.event.action !== 'labeled' || eventLabel !== 'gitvote/passed') {
-                console.log(`ℹ️  Skipping: event is not for gitvote/passed label being added (action: ${context.event.action}, label: ${eventLabel}).`);
+              const eventAction = context.payload?.action;
+              const eventLabel = context.payload?.label?.name;
+              if (eventAction !== 'labeled' || eventLabel !== 'gitvote/passed') {
+                console.log(`ℹ️  Skipping: event is not for gitvote/passed label being added (action: ${eventAction}, label: ${eventLabel}).`);
                 return;
               }
 
