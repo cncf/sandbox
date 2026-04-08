@@ -48,7 +48,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 
 - [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
 - [ ] Provide maintainer emails to get access to the mailing list and Service Desk. Send them to <project-onboarding@cncf.io>. These aren't shared publicly in the spreadsheet above which is why they must be emailed to us.
-- [ ] Ensure that [DCO](https://github.com/apps/dco) are enabled for all GitHub repositories of the project. You may also choose to use a [CLA](https://github.com/cncf/cla) in addition to the DCO.
+- [ ] Ensure the [DCO](https://github.com/apps/dco) app is enabled for all GitHub repositories of the project. You may also choose to use a [CLA](https://github.com/cncf/cla) in addition to the DCO.
 - [ ] Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced in the project's `README.md` on GitHub.
 - [ ] Ensure the LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/policies-guidance/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file).
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
