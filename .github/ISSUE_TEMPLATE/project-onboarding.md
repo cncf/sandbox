@@ -38,9 +38,9 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 
 - [ ] Move your project to its own separate neutral GitHub organization. This will make it transferable to the CNCF's GitHub Enterprise account. If it's already in another GHE account, you will need to remove it from that first.
 - [ ] Accept the invite to join the CNCF GitHub Enterprise account. We'll then add `thelinuxfoundation` as an organization owner to ensure neutral hosting of your project.
-- [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help. This allows project communities to be more discoverable, allows the CNCF to enforce its Code of Conduct, and enables unlimited message retention.
+- [ ] Migrate your Slack channels (if any) to the [Kubernetes or CNCF Slack workspace](https://slack.com/help/articles/217872578-Import-data-from-one-Slack-workspace-to-another). CNCF staff can help. This allows project communities to be more discoverable, allows the CNCF to enforce its Code of Conduct, and enables unlimited message retention. If you already have a large Slack or Discord community, we may also be able to link to that from a pointer channel in the CNCF Slack workspace.
 - [ ] Join the [#maintainers-circle](https://app.slack.com/client/T08PSQ7BQ/C014YQ8CDCG) Slack channel to find and share knowledge with other project teams.
-- [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/1374) if they exist. The "LF Stakeholder email" is <projects@cncf.io>. The "Project" is CNCF.
+- [ ] Transfer [your domain(s) to the CNCF](https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/create/1374) if they exist. The "LF Contact" is <projects@cncf.io>. The "Project Selection" is CNCF.
 - [ ] Submit a [pull request](https://github.com/cncf/artwork) with your artwork if it exists. If you don't have artwork, CNCF can help design some.
 - [ ] Transfer website analytics if they exist. Make <projects@cncf.io> an admin of your existing Google Analytics org account so that we can move it to a CNCF-managed account.
 
@@ -48,7 +48,7 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 
 - [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
 - [ ] Provide maintainer emails to get access to the mailing list and Service Desk. Send them to <project-onboarding@cncf.io>. These aren't shared publicly in the spreadsheet above which is why they must be emailed to us.
-- [ ] Ensure that [DCO](https://github.com/apps/dco) are enabled for all GitHub repositories of the project. You may also choose to use a [CLA](https://github.com/cncf/cla).
+- [ ] Ensure the [DCO](https://github.com/apps/dco) app is enabled for all GitHub repositories of the project. You may also choose to use a [CLA](https://github.com/cncf/cla) in addition to the DCO.
 - [ ] Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced in the project's `README.md` on GitHub.
 - [ ] Ensure the LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/policies-guidance/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file).
 - [ ] Start working on [written, open governance](https://contribute.cncf.io/maintainers/governance/) and consider adding this to a `GOVERNANCE.md` file at the root of your repo.
@@ -61,9 +61,8 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to [DevStats](https://devstats.cncf.io/).
 - [ ] Add the project to [CLOmonitor](https://clomonitor.io/).
 - [ ] Add the project to [LFX Insights](https://insights.linuxfoundation.org/).
-- [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io).
 - [ ] Activate the project in the [LFX Project Control Center](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE).
-- [ ] Add the LFX Slug (`lfx_slug`) in the [landscape configuration](https://github.com/cncf/landscape/blob/master/landscape.yml). The slug can be found in [LFX Project Control Center app](https://projectadmin.lfx.linuxfoundation.org/project/a0941000002wBz4AAE) in Project Definition section of the corresponding project.
+- [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io) after PCC activation, including the `lfx_slug` in the landscape configuration file.
 - [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or CNCF [Snyk](https://snyk.io/).
 - [ ] Create groups.io project maintainer list in PCC.
 - [ ] Add project's groups.io maintainer list to [maintainers@cncf.io](https://groups.google.com/a/cncf.io/g/maintainers/members)
