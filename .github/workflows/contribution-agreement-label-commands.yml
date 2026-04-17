@@ -1,0 +1,89 @@
+name: Contribution Agreement Label Commands
+
+on:
+  issue_comment:
+    types: [created]
+  repository_dispatch:
+    types:
+      - signed-command
+      - unsigned-command
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: contribution-agreement-label-command-${{ github.event.issue.number || github.event.client_payload.github.payload.issue.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  dispatch-slash-command:
+    name: Dispatch Slash Commands
+    if: github.event_name == 'issue_comment'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch /signed and /unsigned
+        uses: peter-evans/slash-command-dispatch@v5
+        with:
+          token: ${{ secrets.SLASH_COMMANDS_PAT }}
+          commands: |
+            signed
+            unsigned
+          permission: write
+
+  apply-contribution-agreement-labels:
+    name: Apply Contribution Agreement Labels
+    if: github.event_name == 'repository_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add target label and remove opposite label
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const command = context.payload.client_payload?.slash_command?.command;
+            const eventPayload = context.payload.client_payload?.github?.payload;
+            const issueNumber = eventPayload?.issue?.number;
+
+            if (!issueNumber) {
+              core.setFailed('Missing issue number in dispatch payload.');
+              return;
+            }
+
+            let addLabel;
+            let removeLabel;
+
+            if (command === 'signed') {
+              addLabel = 'contribution-agreement/signed';
+              removeLabel = 'contribution-agreement/unsigned';
+            } else if (command === 'unsigned') {
+              addLabel = 'contribution-agreement/unsigned';
+              removeLabel = 'contribution-agreement/signed';
+            } else {
+              core.setFailed(`Unsupported command: ${command}`);
+              return;
+            }
+
+            try {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                name: removeLabel
+              });
+              console.log(`Removed label: ${removeLabel}`);
+            } catch (error) {
+              const status = error?.status || error?.response?.status;
+              if (status === 404) {
+                console.log(`Label not present, nothing to remove: ${removeLabel}`);
+              } else {
+                throw error;
+              }
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              labels: [addLabel]
+            });
+            console.log(`Added label: ${addLabel}`);
