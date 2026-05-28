@@ -149,7 +149,7 @@ body:
   - type: input
     attributes:
       label: Maintainers file
-      description: Provide the URL of the project's maintainers file.
+      description: Provide the URL of the project's maintainers file or [`.project` repo](https://contribute.cncf.io/blog/2026/04/22/introducing-dot-project-for-maintainers).
       placeholder: Add maintainer URL here
     validations:
       required: true

@@ -46,8 +46,8 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 
 ## Update and document project details
 
-- [ ] Create a maintainer list and add it to the [aggregated CNCF maintainer list](https://maintainers.cncf.io) via pull request.
-- [ ] Provide maintainer emails to get access to the mailing list and Service Desk. Send them to <project-onboarding@cncf.io>. These aren't shared publicly in the spreadsheet above which is why they must be emailed to us.
+- [ ] Create or ensure your [`.project` repo](https://contribute.cncf.io/blog/2026/04/22/introducing-dot-project-for-maintainers) is up to date with maintainer information.
+- [ ] Ensure each maintainer has an up-to-date [LFX Individual Dashboard profile](https://openprofile.dev/) that includes an active email address in order to get access to the mailing list and Service Desk.
 - [ ] Ensure the [DCO](https://github.com/apps/dco) app is enabled for all GitHub repositories of the project. You may also choose to use a [CLA](https://github.com/cncf/cla) in addition to the DCO.
 - [ ] Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) (or your adopted version of it) are explicitly referenced in the project's `README.md` on GitHub.
 - [ ] Ensure the LF footer is on your website and [guidelines](https://github.com/cncf/foundation/blob/main/policies-guidance/website-guidelines.md) are followed (if your project doesn't have a dedicated website, please adopt those guidelines for the `README.md` file).
