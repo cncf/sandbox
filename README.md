@@ -24,11 +24,14 @@ Applying is as easy as 1-2-3!
 
 Your project's application is placed in the backlog for triaging. You can view the status of your application and others at anytime by checking out our [Project Board](https://github.com/orgs/cncf/projects/14).
 
-As we approach Sandbox application review meetings, CNCF staff will move applications to the "upcoming" column on the Project Board (number dependent on how many can be reviewed in a given meeting). At this point, each application's associated Technical Advisory Group (TAG) and the TOC will ask questions, seek to learn more, and provide a recommendation to the TOC for project inclusion. Projects which applied may also field questions from interested community members beyond any TAG and TOC questions.
+As we approach Sandbox application review meetings, CNCF staff will move applications to the "upcoming" column on the Project Board (number dependent on how many can be reviewed in a given meeting). At this point, the TOC will ask questions, seek to learn more, and make a decision on project inclusion. Projects which applied may also field questions from interested community members beyond TOC questions.
+
+> [!NOTE]
+> TAG Leads and members of the [TOC Project Reviews Subproject](https://github.com/cncf/toc/tree/main/toc_subprojects/project-reviews-subproject) may optionally support applications by conducting a General Technical Review up until Day 0 (the day of the TOC review session). Such reviews are voluntary and provide additional technical context to assist the TOC, but are not a required step in the process. For details on how the review is conducted, see the [Sandbox Review Guide](https://github.com/cncf/toc/blob/main/toc_subprojects/project-reviews-subproject/sandbox-review-guide.md).
 
 ### Community Comments on Applications
 
-The TOC welcomes and appreciates community members support and exploration in surfacing items for technical consideration as part of sandbox applications, it allows the TOC to have a more comprehensive perspective on each projects' potential and supports our TAGs in understanding more about these projects.
+The TOC welcomes and appreciates community members support and exploration in surfacing items for technical consideration as part of sandbox applications, it allows the TOC to have a more comprehensive perspective on each projects' potential.
 
 In keeping with the [Technical Leadership Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#technical-leadership-principles), community members providing comments and questions should [be welcoming and curious in their comments](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#be-welcoming), [provide feedback with courtesy](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#provide-feedback-and-appreciation-appropriately), and [foster respectful resolution](https://github.com/cncf/toc/blob/main/PRINCIPLES.md#foster-respectful-resolution).  Embodying the technical leadership principles as you comment on these applications directly contributes to sustaining the open, community-oriented nature of CNCF.
 
@@ -40,9 +43,8 @@ When the TOC meets to review applications, more details on [frequency here](#fre
 * `Approved` - The application has been reviewed and been approved by the TOC. The issue will be closed.
 * `Declined` - The application has been reviewed and been declined by the TOC. The comments on the issue will reflect the TOC decision and the issue will be closed.
 * `Need-Info` - The application has been reviewed and requires more information in order for the TOC to further discuss the application.  For instructions on what to do, please jump down to [Need-Info](#need-info).
-* `TAG-Assigned` - The application has been reviewed and the TOC would like a TAG to review or consult with the project prior to further discussions.  For instructions on what to do, please jump down to [TAG-Assigned](#tag-assigned).
 * `Postponed` - The application has been reviewed and the TOC has determined the project (as it exists at time of review) is not ready for inclusion within the CNCF. For instructions on what to do, please jump down to [Postponed](#postponed)
-* `Returning` - The application has been reviewed previously, was affixed a `Need-Info` or `TAG-Assigned` label, and that work has been completed and is ready for re-review.  For instructions on what to do, please jump down to [Returning](#returning).
+* `Returning` - The application has been reviewed previously, was affixed a `Need-Info` label, and that work has been completed and is ready for re-review.  For instructions on what to do, please jump down to [Returning](#returning).
 
 ### Label statuses defined
 
@@ -69,23 +71,12 @@ Please provide the additional information requested as a comment on the issue wi
 
 This lets the TOC know the project is ready to be reviewed again. A TOC member or staff will remove the `Need-Info` label and affix `Returning` where it will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting.
 
-#### TAG Assigned
+#### TAG Leads – Optional General Technical Review
 
-If your project is assigned an `TAG-Assigned` label, the TOC will comment which TAG(s) and provide specific details on what is requested. The TAG Co-Chair(s) will be tagged on the issue. Depending on the details of the comment, the TAG or the project will update the issue with a comment containing any pertinent information. This may include links to a presentation recording, as summary of a discussion with the TAG, or recommendations.
+TAGs no longer conduct formal project reviews as part of the sandbox application process. However, TAG Leads and members of the [TOC Project Reviews Subproject](https://github.com/cncf/toc/tree/main/toc_subprojects/project-reviews-subproject) may optionally support applicants by performing a **General Technical Review**. The process for such reviews is described in the [Sandbox Review Guide](https://github.com/cncf/toc/blob/main/toc_subprojects/project-reviews-subproject/sandbox-review-guide.md). Such reviews must be completed up until **Day 0** (the day of the TOC review session) and are intended to provide additional technical context to the TOC. They do not result in a label or a required action for applicants.
 
-Once a comment has been added, please add the below text to your comment so the TOC and staff know to update the issue:
-`Completed TAG review, project is Returning`
-
-This lets the TOC know the project is ready to be reviewed again. A TOC member or staff will remove the `TAG-Assigned` label and affix `Returning` where it will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting.
-
-##### TAG(s)
-
-If the issue is affixed the `TAG-Assigned` label and you have been tagged on the issue as a TAG co-chair, please review the comments for the specific asks regarding the project. When completed, please provide a comment containing any pertinent information. This may include links to a presentation recording, as summary of a discussion with the TAG, or recommendations. Please work with the project to coorindate who will be updating the issue.
-
-Once a comment has been added, please add the below text to your comment so the TOC and staff know to update the issue:
-`Completed TAG review, project is Returning`
-
-This lets the TOC know the project is ready to be reviewed again. A TOC member or staff will remove the `TAG-Assigned` label and affix `Returning` where it will then be removed from the `Waiting` status and placed in the `Upcoming` status for discussion at the next meeting.
+> [!NOTE]
+> Projects may still reach out to the relevant TAG(s) directly for technical input, guidance, or feedback on their application at any time.
 
 #### Postponed
 
@@ -131,7 +122,7 @@ All project and organization names in the examples are fictional and are not int
 
 ##### Baggywrinkle
 
-The TOC reviews and discusses Baggywrinkle. The TOC determines Baggywrinkle doesn't have sufficiently clear direction or indicators on what the project does or how it does it. The TOC concurs that Baggywrinkle should present at the correct TAG to gather input to improve the clarity of what the project does and improve the documentation on how it does it in a cloud native way. The TOC will summarize the two items that need completed on the issue as checkbox items, affix the `Need-Info` and `TAG-Assigned` label. The TAG chairs are then tagged on the issue by their GitHub handle. The application is then moved to the **⏲ Waiting** Column of the [Sandbox Application Board](https://github.com/orgs/cncf/projects/14/views/1). Baggywrinkle then presents to the assigned TAG and incorporates their feedback into the project information and updates the application issue with a comment containing the requested clarity. They or the TAG may then check off the corresponding item, provide the `Completed TAG review & info, project is Returning` comment and the TOC or staff will remove the previous labels, affix the `Returning` label, and place the issue in the **🏗 Upcoming** Column of the [Sandbox Application Board](https://github.com/orgs/cncf/projects/14/views/1) so it is included at the next session.
+The TOC reviews and discusses Baggywrinkle. The TOC determines Baggywrinkle doesn't have sufficiently clear direction or indicators on what the project does or how it does it. The TOC will summarize the items that need to be addressed on the issue as checkbox items and affix the `Need-Info` label. The application is then moved to the **⏲ Waiting** Column of the [Sandbox Application Board](https://github.com/orgs/cncf/projects/14/views/1). Baggywrinkle incorporates the requested clarity into the project information and updates the application issue with a comment. They then provide the `Completed info, project is Returning` comment and the TOC or staff will remove the previous labels, affix the `Returning` label, and place the issue in the **🏗 Upcoming** Column of the [Sandbox Application Board](https://github.com/orgs/cncf/projects/14/views/1) so it is included at the next session.
 
 ##### Isobars
 
