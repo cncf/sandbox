@@ -20,6 +20,38 @@ Applying is as easy as 1-2-3!
 > [!CAUTION]
 > The TOC MUST vote to approve your application and a [Contribution Agreement](https://github.com/cncf/foundation/blob/main/agreements/Sample%20Contribution%20Agreement%20(2025).pdf) MUST be signed before your project can be considered an official CNCF project. You can not represent your project as "donated" or "contributed" until those steps are completed. Please read more below.
 
+### Before you apply: Common reasons applications are closed
+
+Many applications are closed without TOC review due to not meeting basic eligibility criteria. Review these requirements before applying to avoid wasted effort:
+
+**✅ License Compliance**
+- Must use Apache 2.0 or a [CNCF allowlist license](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md)
+- License must be compliant **before** acceptance (promises to "convert after acceptance" are not accepted)
+- BSL (Business Source License) and GPL family licenses are not acceptable
+- **License exceptions:** If you believe your project is a good fit despite using a non-allowlist license, you may [request a license exception](https://contribute.cncf.io/projects/submit-license-exception-request/) from the CNCF Governing Board. Note: exceptions are rarely granted and require Governing Board approval.
+
+**✅ MAINTAINERS File**
+- Must provide direct link to MAINTAINERS.md or MAINTAINERS file (GitHub `/blob/` or GitLab path)
+- Cannot link to contributors graph, external website, or say "N/A" / "will be added"
+- File must contain table with: Name, ID, **Company/Organization** columns
+- Company/Organization column demonstrates employer diversity
+
+**✅ Organization Diversity**
+- Minimum **3 maintainers from 2+ different organizations** (employers)
+- "Organization" = employer/company, NOT GitHub/GitLab organization memberships
+- All maintainers from same company = single organization (does not meet requirement)
+- Being members of different GitHub orgs does not count as organization diversity
+
+**✅ Subproject Separation**
+- If your project is under another project's GitHub/GitLab organization, you must provide a link to a **public issue** in the parent project's repository showing maintainer consensus to split into separate CNCF project
+- Applies to ANY parent project (not just CNCF projects)
+
+**✅ Project vs Reference Architecture**
+- CNCF Sandbox accepts reusable projects, not reference architectures or implementations
+- If your project shows how to wire together existing tools (not building new tool), submit to [CNCF Reference Architectures](https://architecture.cncf.io/)
+
+For detailed requirements and examples, review the [application form](https://github.com/cncf/sandbox/issues/new?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E) which includes inline guidance.
+
 ## What's next?
 
 Your project's application is placed in the backlog for triaging. You can view the status of your application and others at anytime by checking out our [Project Board](https://github.com/orgs/cncf/projects/14).
