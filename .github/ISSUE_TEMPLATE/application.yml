@@ -66,6 +66,33 @@ body:
     validations:
       required: true
 
+  - type: checkboxes
+    id: not-reference-architecture
+    attributes:
+      label: Project vs Reference Architecture/Implementation
+      description: |
+        **Is this a reusable open source project or a reference architecture/implementation?**
+
+        CNCF Sandbox accepts **reusable projects**, NOT reference architectures or reference implementations.
+
+        **Reusable project (eligible for Sandbox):**
+        - Generic, designed for broad adoption by any organization
+        - Provides reusable components, tools, or frameworks
+        - Can be integrated into different environments and use cases
+        - Focus is on solving a general problem, not demonstrating a specific architecture
+
+        **Reference architecture/implementation (NOT eligible - submit to [CNCF Reference Architectures](https://architecture.cncf.io/) instead):**
+        - Organization-specific implementation demonstrating cloud native patterns
+        - Company-specific platform or internal tooling
+        - Uses terms like "reference architecture", "reference implementation", "implementation of", or "persona-driven reference"
+        - Describes itself as an "implementation" showing how to use existing tools together
+        - Focus is on demonstrating patterns or wiring together existing tools rather than building a new reusable tool
+
+        **Key distinction:** If you're showing HOW to build something using existing tools (reference), vs building a NEW tool others can use (project).
+      options:
+        - label: This is a reusable open source project designed for broad adoption, not a reference architecture, reference implementation, or demonstration of patterns
+          required: true
+
   - type: markdown
     attributes:
       value: |
@@ -78,8 +105,22 @@ body:
   - type: input
     attributes:
       label: Org repo URL (provide if all repos under the org are in scope of the application)
-      description: Provide the URL of GitHub or Gitlab organization of the projects if all repos under the org are in scope of the application. If no organization, write "N/A".
-      placeholder: Add org URL here
+      description: |
+        Provide the URL of GitHub or GitLab organization of the projects if all repos under the org are in scope of the application. If no organization, write "N/A".
+
+        **⚠️ If you are a subproject separating from a parent project:**
+
+        If your project currently exists as part of another project's organization and you are applying to CNCF Sandbox separately, you MUST provide evidence of a **formal vote** by the parent project's maintainers approving your separation.
+
+        Include a link to a **public GitHub/GitLab issue** in the parent project's repository documenting the vote in the "Additional information" section at the end of this application.
+
+        **This requirement applies to ANY parent project, not just CNCF projects.**
+
+        **Example:** If your repo is under `https://github.com/parent-project-org/your-subproject` and you're applying separately from the parent project, you must link to an issue like:
+        `https://github.com/parent-project-org/parent-repo/issues/123`
+
+        This issue should show parent project maintainer consensus approving your move out of their organization to become a separate CNCF project.
+      placeholder: Add org URL here or N/A
     validations:
       required: true
 
@@ -149,10 +190,51 @@ body:
   - type: input
     attributes:
       label: Maintainers file
-      description: Provide the URL of the project's maintainers file or [`.project` repo](https://contribute.cncf.io/blog/2026/04/22/introducing-dot-project-for-maintainers).
-      placeholder: Add maintainer URL here
+      description: |
+        Provide the URL to your MAINTAINERS.md, MAINTAINERS, or [`.project` repo](https://contribute.cncf.io/blog/2026/04/22/introducing-dot-project-for-maintainers).
+
+        **Requirements:**
+        - Must be a direct GitHub link to the file (e.g., `https://github.com/org/repo/blob/main/MAINTAINERS.md`)
+        - File must contain a table with columns for: Name, GitHub ID, and **Company/Organization**
+        - Minimum **3 maintainers from 2+ different organizations** (see organization diversity note below)
+
+        **Invalid examples that will result in application closure:**
+        - ❌ Contributors graph: `https://github.com/org/repo/graphs/contributors`
+        - ❌ "N/A", "TBD", or "Will be added after acceptance"
+        - ❌ Links to external documentation websites (not on GitHub)
+        - ❌ Repository URL without direct `/blob/` path to the file
+
+        **Valid example format:**
+        ```markdown
+        | Maintainer | GitHub ID | Company/Organization |
+        | ---------- | --------- | -------------------- |
+        | Jane Doe   | @janedoe  | Acme Corp            |
+        | John Smith | @jsmith   | Example Inc          |
+        | Alice Lee  | @alee     | Demo Systems         |
+        ```
+      placeholder: https://github.com/your-org/your-repo/blob/main/MAINTAINERS.md
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        > [!IMPORTANT]
+        > **Organization Diversity Requirement**
+        >
+        > CNCF Sandbox requires **3+ maintainers from 2+ different organizations** (employers/companies).
+        >
+        > **What counts as different organizations:**
+        > - ✅ Different employers: Acme Corp, Example Inc, Demo Systems
+        > - ✅ Different legal entities: Google, Red Hat, Microsoft, Solo.io
+        >
+        > **What does NOT count:**
+        > - ❌ Different GitHub organizations (kubernetes, prometheus, envoy) - these are project orgs, not employers
+        > - ❌ Maintainers who all work for the same company but are members of different OSS GitHub orgs
+        >
+        > **Why this matters:** CNCF projects must be vendor-neutral. Single-vendor projects should mature to multi-organization governance before applying.
+        >
+        > **How to demonstrate:** Include a "Company" or "Organization" column in your MAINTAINERS file showing each maintainer's employer.
 
   - type: input
     attributes:
@@ -275,8 +357,26 @@ body:
   - type: textarea
     attributes:
       label: Will the project require a license exception?
-      description: Does this project use a license other than [Apache 2.0 or one of the approved licenses on the CNCF Allowlist](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md#cncf-allowlist-license-policy)? If no, write "N/A".
-      placeholder: Add details on whether this project uses a license that is not on the approved list and therefore may need an exception after joining the CNCF
+      description: |
+        Does this project use a license other than [Apache 2.0 or one of the approved licenses on the CNCF Allowlist](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md#cncf-allowlist-license-policy)?
+
+        **⚠️ CRITICAL:** Your project's license must be compliant **BEFORE** acceptance. The TOC cannot accept projects with promises to "convert the license after acceptance."
+
+        **Allowed licenses:**
+        - ✅ **Apache 2.0** (strongly preferred for main project code)
+        - ✅ MIT, BSD-2-Clause, BSD-3-Clause, ISC (allowlist - may require migration to Apache 2.0 for main project code)
+        - See [full allowlist](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md)
+
+        **Not allowed (will result in application closure):**
+        - ❌ GPL, LGPL, AGPL (copyleft licenses)
+        - ❌ BSL / BUSL (Business Source License)
+        - ❌ Proprietary or custom licenses
+        - ❌ "We will convert to Apache 2.0 upon acceptance"
+
+        If your license is not on the allowlist, you must convert to Apache 2.0 BEFORE applying. Governing Board exceptions are rarely granted.
+
+        **If no exception needed, write "N/A".**
+      placeholder: N/A - Project uses Apache 2.0 license
     validations:
       required: true
 
@@ -292,6 +392,40 @@ body:
       value: |
         <br />
 
+        ---
+
+        ## ✅ Pre-Submission Checklist
+
+        Before submitting, verify your application meets these requirements:
+
+        **Critical Requirements (application will be closed if any are missing):**
+        - [ ] Project uses **Apache 2.0** or a [CNCF allowlist license](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md) (not "will convert later")
+        - [ ] **MAINTAINERS file** exists with Name, GitHub ID, and **Company/Organization** columns
+        - [ ] **3+ maintainers** from **2+ different organizations** (employers, not GitHub orgs)
+        - [ ] Direct link to MAINTAINERS file provided (not contributors graph, not "N/A")
+        - [ ] Repository is **6+ months old** with active development
+        - [ ] If separating from a parent project: public vote issue from parent project maintainers linked
+        - [ ] Project is **reusable**, not a reference architecture, reference implementation, or company-specific platform
+
+        **Recommended (improves review experience):**
+        - [ ] Code of Conduct, Contributing guide, Security policy properly documented
+        - [ ] Adopters list with production users
+        - [ ] Roadmap shows future direction and is publicly accessible
+        - [ ] Similar projects section addresses overlap and differentiation
+
+        **Common mistakes that result in auto-closure:**
+        - ❌ Linking to contributors graph instead of MAINTAINERS.md file
+        - ❌ All maintainers from same company (even if in different GitHub orgs)
+        - ❌ License not compliant (BSL, GPL, or promise to convert later)
+        - ❌ Repository younger than 6 months
+        - ❌ Saying "will add [required file] after acceptance"
+        - ❌ Reference architecture or reference implementation submitted as a project
+
+        <br />
+
+  - type: markdown
+    attributes:
+      value: |
         ## :envelope: Contact information
 
         Provide information about who to contact with questions about the project and who will sign the [Contribution Agreement](https://github.com/cncf/foundation/blob/main/agreements/Sample%20Contribution%20Agreement%20(2025).pdf).
