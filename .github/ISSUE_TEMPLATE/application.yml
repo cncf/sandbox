@@ -196,7 +196,6 @@ body:
         **Requirements:**
         - Must be a direct GitHub link to the file (e.g., `https://github.com/org/repo/blob/main/MAINTAINERS.md`)
         - File must contain a table with columns for: Name, GitHub ID, and **Company/Organization**
-        - Minimum **3 maintainers from 2+ different organizations** (see organization diversity note below)
 
         **Invalid examples that will result in application closure:**
         - ❌ Contributors graph: `https://github.com/org/repo/graphs/contributors`
@@ -219,22 +218,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        > [!IMPORTANT]
-        > **Organization Diversity Requirement**
+        > [!NOTE]
+        > **Organization Diversity**
         >
-        > CNCF Sandbox requires **3+ maintainers from 2+ different organizations** (employers/companies).
+        > Organization diversity is not a requirement for Sandbox, but the TOC does consider it during review. Including a "Company" or "Organization" column in your MAINTAINERS file helps the TOC understand the project's contributor base.
         >
         > **What counts as different organizations:**
         > - ✅ Different employers: Acme Corp, Example Inc, Demo Systems
-        > - ✅ Different legal entities: Google, Red Hat, Microsoft, Solo.io
         >
         > **What does NOT count:**
         > - ❌ Different GitHub organizations (kubernetes, prometheus, envoy) - these are project orgs, not employers
         > - ❌ Maintainers who all work for the same company but are members of different OSS GitHub orgs
-        >
-        > **Why this matters:** CNCF projects must be vendor-neutral. Single-vendor projects should mature to multi-organization governance before applying.
-        >
-        > **How to demonstrate:** Include a "Company" or "Organization" column in your MAINTAINERS file showing each maintainer's employer.
 
   - type: input
     attributes:
@@ -401,7 +395,6 @@ body:
         **Critical Requirements (application will be closed if any are missing):**
         - [ ] Project uses **Apache 2.0** or a [CNCF allowlist license](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md) (not "will convert later")
         - [ ] **MAINTAINERS file** exists with Name, GitHub ID, and **Company/Organization** columns
-        - [ ] **3+ maintainers** from **2+ different organizations** (employers, not GitHub orgs)
         - [ ] Direct link to MAINTAINERS file provided (not contributors graph, not "N/A")
         - [ ] Repository is **6+ months old** with active development
         - [ ] If separating from a parent project: public vote issue from parent project maintainers linked
@@ -412,10 +405,10 @@ body:
         - [ ] Adopters list with production users
         - [ ] Roadmap shows future direction and is publicly accessible
         - [ ] Similar projects section addresses overlap and differentiation
+        - [ ] Maintainers from multiple organizations (employers, not GitHub orgs)
 
         **Common mistakes that result in auto-closure:**
         - ❌ Linking to contributors graph instead of MAINTAINERS.md file
-        - ❌ All maintainers from same company (even if in different GitHub orgs)
         - ❌ License not compliant (BSL, GPL, or promise to convert later)
         - ❌ Repository younger than 6 months
         - ❌ Saying "will add [required file] after acceptance"

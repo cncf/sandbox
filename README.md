@@ -34,12 +34,10 @@ Many applications are closed without TOC review due to not meeting basic eligibi
 - Must provide direct link to MAINTAINERS.md or MAINTAINERS file (GitHub `/blob/` or GitLab path)
 - Cannot link to contributors graph, external website, or say "N/A" / "will be added"
 - File must contain table with: Name, ID, **Company/Organization** columns
-- Company/Organization column demonstrates employer diversity
 
-**✅ Organization Diversity**
-- Minimum **3 maintainers from 2+ different organizations** (employers)
+**✅ Organization Diversity** *(not a requirement, but considered during review)*
+- The TOC considers maintainer employer diversity when evaluating applications
 - "Organization" = employer/company, NOT GitHub/GitLab organization memberships
-- All maintainers from same company = single organization (does not meet requirement)
 - Being members of different GitHub orgs does not count as organization diversity
 
 **✅ Subproject Separation**
