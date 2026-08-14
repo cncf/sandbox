@@ -25,9 +25,10 @@ Applying is as easy as 1-2-3!
 Many applications are closed without TOC review due to not meeting basic eligibility criteria. Review these requirements before applying to avoid wasted effort:
 
 **✅ License Compliance**
-- Must use Apache 2.0 or a [CNCF allowlist license](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md)
+- Must use Apache 2.0
 - License must be compliant **before** acceptance (promises to "convert after acceptance" are not accepted)
 - BSL (Business Source License) and GPL family licenses are not acceptable
+- Dependencies must follow the [CNCF IP Policy](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy) or have an existing [blanket license exception granted](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md#cncf-allowlist-license-policy)
 - **License exceptions:** If you believe your project is a good fit despite using a non-allowlist license, you may [request a license exception](https://contribute.cncf.io/projects/submit-license-exception-request/) from the CNCF Governing Board. Note: exceptions are rarely granted and require Governing Board approval.
 
 **✅ MAINTAINERS File**
