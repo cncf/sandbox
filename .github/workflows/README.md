@@ -67,11 +67,10 @@ Runs an automated first-pass review of newly opened `[Sandbox]` applications usi
 - `scripts/sandbox-application-review-prompt.md` - Review rubric / prompt (includes prompt-injection hardening for untrusted issue bodies)
 - `scripts/sandbox-application-review.js` - Verdict parsing and label/comment logic
 
-**Required Secret:** `COPILOT_GITHUB_TOKEN`
-- Fine-grained Personal Access Token (user-owned, not org-owned) from a user with a Copilot subscription
-- Permissions: **Account → Copilot Requests** (read)
-- Create at https://github.com/settings/personal-access-tokens/new and add at https://github.com/cncf/sandbox/settings/secrets/actions
-- Note: the default `GITHUB_TOKEN` does NOT work for Copilot CLI authentication
+**Authentication & Billing:**
+- Uses the built-in `GITHUB_TOKEN` with the `copilot-requests: write` workflow permission — no PAT or repository secret is required ([changelog](https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions/))
+- Copilot usage is billed to the organization's pooled Copilot Business/Enterprise credits; no individual Copilot seat is consumed
+- **Org prerequisites:** the CNCF org must have a Copilot Business or Enterprise plan with the Copilot CLI policy enabled, including "Allow use of Copilot CLI billed to the organization" (enabled by default when the CLI policy is on)
 
 **Testing:** Open an issue titled `[Sandbox] Test Project` using the application form. Delete the issue (or remove labels/comments) afterward.
 

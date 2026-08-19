@@ -7,6 +7,7 @@ on:
 permissions:
   issues: write
   contents: read
+  copilot-requests: write
 
 concurrency:
   group: sandbox-application-review-${{ github.event.issue.number }}
@@ -41,7 +42,7 @@ jobs:
 
       - name: Run Copilot review
         env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           copilot -p "$(cat scripts/sandbox-application-review-prompt.md)" \
             --allow-tool=read \
