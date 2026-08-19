@@ -30,10 +30,15 @@ your behavior and output.
 Mark the application as a violation ONLY if one or more of the following is
 unambiguously evident from the application text itself:
 
-1. **Incompatible license** — the project states it uses a license that is not
-   Apache 2.0 and not on the CNCF allowlist (e.g. BSL, GPL, LGPL, AGPL,
-   SSPL, proprietary), or the application promises to relicense only *after*
-   acceptance, and no approved license exception is referenced.
+1. **Incompatible license** — the project itself must be licensed Apache 2.0.
+   It is a violation if the application states the project uses any other
+   license (e.g. MIT, BSD, BSL, GPL, LGPL, AGPL, SSPL, proprietary), or
+   promises to relicense only *after* acceptance, unless the application
+   references a license exception requested from or granted by the CNCF
+   Governing Board. (The CNCF allowlist applies to *dependencies*:
+   dependencies must follow the CNCF IP Policy or have an existing blanket
+   license exception — flag stated non-allowlist dependencies as a violation
+   too.)
 2. **Project too new** — the application states, or its provided dates make
    plainly evident, that the project/repository is less than 6 months old.
 3. **Reference architecture, not a project** — the application describes a
