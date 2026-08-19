@@ -46,6 +46,7 @@ jobs:
         run: |
           copilot -p "$(cat scripts/sandbox-application-review-prompt.md)" \
             --allow-tool=read \
+            --allow-tool=url \
             --no-ask-user \
             -s > /tmp/review/verdict.txt
           echo "--- Copilot output ---"

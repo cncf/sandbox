@@ -57,7 +57,7 @@ Runs an automated first-pass review of newly opened `[Sandbox]` applications usi
 
 **How It Works:**
 1. **Trigger:** An issue is opened with a title starting with `[Sandbox]`
-2. **Action:** The Copilot CLI (read-only, no shell/write tools) evaluates the application body against the repo README criteria, the application form definition, and `cncf/toc` PRINCIPLES.md (fetched at runtime)
+2. **Action:** The Copilot CLI (read + URL-fetch tools only, no shell/write) evaluates the application body against the repo README criteria, the application form definition, and `cncf/toc` PRINCIPLES.md (fetched at runtime). It fetches the application's listed URLs to verify the repository license (via the GitHub API / raw LICENSE file), repository age, and the MAINTAINERS file contents
 3. **Clear violation** (incompatible license, project under 6 months old, reference architecture, invalid MAINTAINERS link, empty application): applies the `Postponed` label and posts a comment citing the violated guideline with evidence. The issue is left **open** for human confirmation
 4. **No violation:** posts an advisory checklist-style assessment comment to assist TOC reviewers; no labels are changed
 5. **Fail-safe:** if Copilot output is unparseable, the workflow logs and exits without labeling or commenting
