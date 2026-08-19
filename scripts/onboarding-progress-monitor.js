@@ -67,15 +67,112 @@ function getProgressAction(timeInfo) {
 }
 
 /**
+ * Parse the onboarding issue body for outstanding (unchecked) task-list items,
+ * grouped by the `##` section heading they appear under.
+ * @param {string} body - Raw issue body markdown
+ * @returns {{ sections: Array<{ heading: string, tasks: string[] }>, totalOpen: number, totalItems: number }}
+ */
+function parseOutstandingTasks(body) {
+  const result = { sections: [], totalOpen: 0, totalItems: 0 };
+  if (!body || typeof body !== 'string') return result;
+
+  const lines = body.split(/\r?\n/);
+  const headingRe = /^##\s+(.+?)\s*$/;
+  const taskRe = /^\s*[-*]\s+\[( |x|X)\]\s+(.*)$/;
+
+  let currentHeading = null;
+  const buckets = new Map(); // heading -> { heading, tasks: [] }
+
+  for (const line of lines) {
+    const h = line.match(headingRe);
+    if (h) {
+      currentHeading = h[1].trim();
+      continue;
+    }
+    const t = line.match(taskRe);
+    if (!t) continue;
+
+    result.totalItems += 1;
+    const checked = t[1] !== ' ';
+    if (checked) continue;
+
+    result.totalOpen += 1;
+    const heading = currentHeading || 'Uncategorized';
+    if (!buckets.has(heading)) {
+      const entry = { heading, tasks: [] };
+      buckets.set(heading, entry);
+      result.sections.push(entry);
+    }
+    buckets.get(heading).tasks.push(t[2].trim());
+  }
+
+  return result;
+}
+
+/**
+ * Render the "Outstanding Onboarding Tasks" block that gets injected into the
+ * progress-alert comment. Returns an empty string when there is nothing useful
+ * to show (e.g., body missing or no checklist detected).
+ * @param {{ sections: Array<{ heading: string, tasks: string[] }>, totalOpen: number, totalItems: number }} parsed
+ * @param {number} [maxTasks=40] - Cap on total rendered task lines
+ * @returns {string}
+ */
+function formatOutstandingTasksBlock(parsed, maxTasks = 40) {
+  if (!parsed || parsed.totalItems === 0) return '';
+
+  let block = `### 📋 Outstanding Onboarding Tasks\n\n`;
+
+  if (parsed.totalOpen === 0) {
+    block += `✅ All ${parsed.totalItems} checklist items in the issue description appear complete. `;
+    block += `If onboarding is finished, please close this issue.\n\n`;
+    return block;
+  }
+
+  block += `**${parsed.totalOpen} of ${parsed.totalItems} checklist items still open.** `;
+  block += `Based on the checklist in the issue description — if you've been tracking progress in a quoted reply, please also update the issue body so this list stays accurate.\n\n`;
+
+  let remaining = maxTasks;
+  let truncated = 0;
+
+  for (const section of parsed.sections) {
+    if (remaining <= 0) {
+      truncated += section.tasks.length;
+      continue;
+    }
+    block += `**${section.heading}** (${section.tasks.length} open)\n`;
+    const take = Math.min(remaining, section.tasks.length);
+    for (let i = 0; i < take; i++) {
+      block += `- [ ] ${section.tasks[i]}\n`;
+    }
+    if (section.tasks.length > take) {
+      truncated += section.tasks.length - take;
+    }
+    remaining -= take;
+    block += `\n`;
+  }
+
+  if (truncated > 0) {
+    block += `_…and ${truncated} more item${truncated === 1 ? '' : 's'} not shown._\n\n`;
+  }
+
+  return block;
+}
+
+/**
  * Create a comment for the onboarding issue
  * @param {Object} timeInfo - Time breakdown
  * @param {Object} actionInfo - Action information
  * @param {string} projectName - Name of the project
+ * @param {string} [issueBody] - Raw issue body markdown for outstanding-task extraction
  * @returns {string} Comment content
  */
-function createComment(timeInfo, actionInfo, projectName) {
+function createComment(timeInfo, actionInfo, projectName, issueBody) {
   const { months, weeks, days } = timeInfo;
-  
+
+  const tasksBlock = actionInfo.action === 'archive'
+    ? ''
+    : formatOutstandingTasksBlock(parseOutstandingTasks(issueBody));
+
   let comment = `## ⚠️ Onboarding Progress Alert for ${projectName}\n\n`;
   
   if (actionInfo.action === 'archive') {
@@ -95,6 +192,7 @@ function createComment(timeInfo, actionInfo, projectName) {
     comment += `- Complete all remaining onboarding tasks\n`;
     comment += `- Contact CNCF staff if you need assistance\n`;
     comment += `- Update this issue with your progress\n\n`;
+    comment += tasksBlock;
     comment += `**Timeline:**\n`;
     comment += `- Tomorrow: Another daily warning\n`;
     comment += `- If all tasks are not completed in the next ${30 - (days % 30)} days: Automatic archival\n\n`;
@@ -107,6 +205,7 @@ function createComment(timeInfo, actionInfo, projectName) {
     comment += `- Complete remaining onboarding tasks\n`;
     comment += `- Contact CNCF staff if assistance is needed\n`;
     comment += `- Update this issue with progress\n\n`;
+    comment += tasksBlock;
     comment += `**Timeline:**\n`;
     comment += `- Next week: Another weekly warning\n`;
     comment += `- Week 4: Daily warnings will begin\n`;
@@ -122,6 +221,7 @@ function createComment(timeInfo, actionInfo, projectName) {
     comment += `**Next Steps:**\n`;
     comment += `- Complete all remaining onboarding tasks\n`;
     comment += `- Contact CNCF staff immediately if assistance is needed\n\n`;
+    comment += tasksBlock;
     comment += `**Timeline:**\n`;
     comment += `- In 1 month: Weekly warnings will begin\n`;
     comment += `- If all tasks are not completed in the next 2 months: Automatic archival\n\n`;
@@ -137,6 +237,7 @@ function createComment(timeInfo, actionInfo, projectName) {
     comment += `- Complete remaining onboarding tasks\n`;
     comment += `- Contact CNCF staff if assistance is needed\n`;
     comment += `- Update this issue with progress\n\n`;
+    comment += tasksBlock;
     comment += `**Timeline:**\n`;
     comment += `- If all tasks are not completed in the next ${3 - (months % 3)} months: Health issue will be created\n`;
     comment += `- If all tasks are not completed in the next ${6 - (months % 6)} months: Automatic archival\n\n`;
@@ -150,6 +251,7 @@ function createComment(timeInfo, actionInfo, projectName) {
     comment += `- Complete remaining onboarding tasks\n`;
     comment += `- Contact CNCF staff if assistance is needed\n`;
     comment += `- Update this issue with progress\n\n`;
+    comment += tasksBlock;
     comment += `**Timeline:**\n`;
     comment += `- If all tasks are not completed in the next ${3 - (months % 3)} months: TOC team will be tagged\n`;
     comment += `- If all tasks are not completed in the next ${9 - months} months: Automatic archival\n\n`;
@@ -461,7 +563,7 @@ async function monitorOnboardingProgress(github, context, checkAll = false) {
         console.log(`   ✅ Applied label: ${actionInfo.label}`);
         
         // Create appropriate comment
-        const comment = createComment(timeInfo, actionInfo, projectName);
+        const comment = createComment(timeInfo, actionInfo, projectName, issue.body);
         await github.rest.issues.createComment({
           owner: context.repo.owner,
           repo: context.repo.repo,
@@ -611,6 +713,8 @@ module.exports = {
   getProgressAction,
   createComment,
   createHealthIssue,
+  parseOutstandingTasks,
+  formatOutstandingTasksBlock,
   checkRateLimit,
   sleep
 };
