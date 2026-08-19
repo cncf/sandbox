@@ -51,6 +51,32 @@ Automated monitoring of sandbox project onboarding progress. Creates health issu
 
 ---
 
+### 4. Sandbox Application Copilot Pre-Review (sandbox-application-review.yml)
+
+Runs an automated first-pass review of newly opened `[Sandbox]` applications using the GitHub Copilot CLI, validating the application against the [Sandbox acceptance criteria](../../README.md#before-you-apply-common-reasons-applications-are-closed) and the [CNCF TOC Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md).
+
+**How It Works:**
+1. **Trigger:** An issue is opened with a title starting with `[Sandbox]`
+2. **Action:** The Copilot CLI (read-only, no shell/write tools) evaluates the application body against the repo README criteria, the application form definition, and `cncf/toc` PRINCIPLES.md (fetched at runtime)
+3. **Clear violation** (incompatible license, project under 6 months old, reference architecture, invalid MAINTAINERS link, empty application): applies the `Postponed` label and posts a comment citing the violated guideline with evidence. The issue is left **open** for human confirmation
+4. **No violation:** posts an advisory checklist-style assessment comment to assist TOC reviewers; no labels are changed
+5. **Fail-safe:** if Copilot output is unparseable, the workflow logs and exits without labeling or commenting
+
+**Files:**
+- `.github/workflows/sandbox-application-review.yml` - Workflow definition
+- `scripts/sandbox-application-review-prompt.md` - Review rubric / prompt (includes prompt-injection hardening for untrusted issue bodies)
+- `scripts/sandbox-application-review.js` - Verdict parsing and label/comment logic
+
+**Required Secret:** `COPILOT_GITHUB_TOKEN`
+- Fine-grained Personal Access Token (user-owned, not org-owned) from a user with a Copilot subscription
+- Permissions: **Account → Copilot Requests** (read)
+- Create at https://github.com/settings/personal-access-tokens/new and add at https://github.com/cncf/sandbox/settings/secrets/actions
+- Note: the default `GITHUB_TOKEN` does NOT work for Copilot CLI authentication
+
+**Testing:** Open an issue titled `[Sandbox] Test Project` using the application form. Delete the issue (or remove labels/comments) afterward.
+
+---
+
 ## Quick Start (Onboarding Monitor)
 
 **For Deployment:** Jump to [Deployment Steps](#deployment-steps)  
