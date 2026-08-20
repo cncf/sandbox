@@ -51,6 +51,31 @@ Automated monitoring of sandbox project onboarding progress. Creates health issu
 
 ---
 
+### 4. Sandbox Application Copilot Pre-Review (sandbox-application-review.yml)
+
+Runs an automated first-pass review of newly opened `[Sandbox]` applications using the GitHub Copilot CLI, validating the application against the [Sandbox acceptance criteria](../../README.md#before-you-apply-common-reasons-applications-are-closed) and the [CNCF TOC Principles](https://github.com/cncf/toc/blob/main/PRINCIPLES.md).
+
+**How It Works:**
+1. **Trigger:** An issue is opened with a title starting with `[Sandbox]`
+2. **Action:** The Copilot CLI (read + URL-fetch tools only, no shell/write) evaluates the application body against the repo README criteria, the application form definition, and `cncf/toc` PRINCIPLES.md (fetched at runtime). It fetches the application's listed URLs to verify the repository license (via the GitHub API / raw LICENSE file), repository age, and the MAINTAINERS file contents
+3. **Clear violation** (incompatible license, project under 6 months old, reference architecture, invalid MAINTAINERS link, empty application): applies the `Postponed` label and posts a comment citing the violated guideline with evidence. The issue is left **open** for human confirmation
+4. **No violation:** posts an advisory checklist-style assessment comment to assist TOC reviewers; no labels are changed
+5. **Fail-safe:** if Copilot output is unparseable, the workflow logs and exits without labeling or commenting
+
+**Files:**
+- `.github/workflows/sandbox-application-review.yml` - Workflow definition
+- `scripts/sandbox-application-review-prompt.md` - Review rubric / prompt (includes prompt-injection hardening for untrusted issue bodies)
+- `scripts/sandbox-application-review.js` - Verdict parsing and label/comment logic
+
+**Authentication & Billing:**
+- Uses the built-in `GITHUB_TOKEN` with the `copilot-requests: write` workflow permission — no PAT or repository secret is required ([changelog](https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions/))
+- Copilot usage is billed to the organization's pooled Copilot Business/Enterprise credits; no individual Copilot seat is consumed
+- **Org prerequisites:** the CNCF org must have a Copilot Business or Enterprise plan with the Copilot CLI policy enabled, including "Allow use of Copilot CLI billed to the organization" (enabled by default when the CLI policy is on)
+
+**Testing:** Open an issue titled `[Sandbox] Test Project` using the application form. Delete the issue (or remove labels/comments) afterward.
+
+---
+
 ## Quick Start (Onboarding Monitor)
 
 **For Deployment:** Jump to [Deployment Steps](#deployment-steps)  

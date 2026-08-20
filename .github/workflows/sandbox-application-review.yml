@@ -1,0 +1,60 @@
+name: Sandbox Application Copilot Pre-Review
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  contents: read
+  copilot-requests: write
+
+concurrency:
+  group: sandbox-application-review-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  copilot-review:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, '[Sandbox]')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install GitHub Copilot CLI
+        run: npm install -g @github/copilot
+
+      - name: Prepare review materials
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          mkdir -p /tmp/review
+          printf '%s\n' "$ISSUE_TITLE" > /tmp/review/issue-title.txt
+          printf '%s\n' "$ISSUE_BODY" > /tmp/review/issue-body.md
+          curl -fsSL https://raw.githubusercontent.com/cncf/toc/main/PRINCIPLES.md -o /tmp/review/PRINCIPLES.md
+
+      - name: Run Copilot review
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          copilot -p "$(cat scripts/sandbox-application-review-prompt.md)" \
+            --allow-tool=read \
+            --allow-tool=url \
+            --no-ask-user \
+            -s > /tmp/review/verdict.txt
+          echo "--- Copilot output ---"
+          cat /tmp/review/verdict.txt
+
+      - name: Apply verdict to issue
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { applyVerdict } = require('./scripts/sandbox-application-review.js');
+            await applyVerdict(github, context, '/tmp/review/verdict.txt');
