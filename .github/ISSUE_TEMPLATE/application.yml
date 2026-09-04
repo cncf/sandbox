@@ -352,25 +352,43 @@ body:
     attributes:
       label: Will the project require a license exception?
       description: |
-        Does this project use a license other than [Apache 2.0 or one of the approved licenses on the CNCF Allowlist](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md#cncf-allowlist-license-policy)?
-
-        **⚠️ CRITICAL:** Your project's license must be compliant **BEFORE** acceptance. The TOC cannot accept projects with promises to "convert the license after acceptance."
-
-        **Allowed licenses:**
-        - ✅ **Apache 2.0** (strongly preferred for main project code)
-        - ✅ MIT, BSD-2-Clause, BSD-3-Clause, ISC (allowlist - may require migration to Apache 2.0 for main project code)
-        - See [full allowlist](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md)
-
-        **Not allowed (will result in application closure):**
-        - ❌ GPL, LGPL, AGPL (copyleft licenses)
-        - ❌ BSL / BUSL (Business Source License)
-        - ❌ Proprietary or custom licenses
-        - ❌ "We will convert to Apache 2.0 upon acceptance"
-
-        If your license is not on the allowlist, you must convert to Apache 2.0 BEFORE applying. Governing Board exceptions are rarely granted.
-
+        Is the project licensed as something other than Apache 2.0?
         **If no exception needed, write "N/A".**
+
       placeholder: N/A - Project uses Apache 2.0 license
+    validations:
+      required: true
+  
+  - type: textarea
+    attributes:
+      label: Does the project utilize any dependencies with licenses not on the allowlist or an approved exception?
+      description: |
+        List any dependencies that have licenses not on the [CNCF allowlist](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md) or an [approved exception](https://exceptions.cncf.io/).
+        **If all dependencies are compliant, write "N/A".**
+
+        **[Allowed Licenses](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md):**
+        - Apache-2.0
+        - 0BSD
+        - BSD-2-Clause
+        - BSD-2-Clause-FreeBSD
+        - BSD-3-Clause
+        - MIT
+        - MIT-0
+        - ISC
+        - OpenSSL
+        - OpenSSL-standalone
+        - PSF-2.0
+        - Python-2.0
+        - Python-2.0.1
+        - PostgreSQL
+        - SSLeay-standalone
+        - UPL-1.0
+        - X11
+        - Zlib
+        - Google patent license for Golang
+
+        **[Exception List](https://exceptions.cncf.io/)**
+      placeholder: N/A - All licenses are on the allowlist or an approved exception
     validations:
       required: true
 
@@ -393,19 +411,19 @@ body:
         Before submitting, verify your application meets these requirements:
 
         **Critical Requirements (application will be closed if any are missing):**
-        - [ ] Project uses **Apache 2.0** or a [CNCF allowlist license](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md) (not "will convert later")
-        - [ ] **MAINTAINERS file** exists with Name, GitHub ID, and **Company/Organization** columns
-        - [ ] Direct link to MAINTAINERS file provided (not contributors graph, not "N/A")
-        - [ ] Repository is **6+ months old** with active development
-        - [ ] If separating from a parent project: public vote issue from parent project maintainers linked
-        - [ ] Project is **reusable**, not a reference architecture, reference implementation, or company-specific platform
+        - Project uses the **Apache 2.0** license.
+        - **MAINTAINERS file** exists with Name, GitHub ID, and **Company/Organization** columns
+        - Direct link to MAINTAINERS file provided (not contributors graph, not "N/A")
+        - Repository is **6+ months old** with active development
+        - If separating from a parent project: public vote issue from parent project maintainers linked
+        - Project is **reusable**, not a reference architecture, reference implementation, or company-specific platform
 
         **Recommended (improves review experience):**
-        - [ ] Code of Conduct, Contributing guide, Security policy properly documented
-        - [ ] Adopters list with production users
-        - [ ] Roadmap shows future direction and is publicly accessible
-        - [ ] Similar projects section addresses overlap and differentiation
-        - [ ] Maintainers from multiple organizations (employers, not GitHub orgs)
+        - Code of Conduct, Contributing guide, Security policy properly documented
+        - Adopters list with production users
+        - Roadmap shows future direction and is publicly accessible
+        - Similar projects section addresses overlap and differentiation
+        - Maintainers from multiple organizations (employers, not GitHub orgs)
 
         **Common mistakes that result in auto-closure:**
         - ❌ Linking to contributors graph instead of MAINTAINERS.md file
