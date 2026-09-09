@@ -1,0 +1,62 @@
+name: Upcoming Sandbox Review Auto-Assign Reviewers
+
+# Scans the CNCF Sandbox project board (cncf/projects/14) every 15 minutes for
+# open [Sandbox] application issues whose Status is "Upcoming", and assigns
+# TOC members from cncf/people teams.cncf-toc.members using a lifetime
+# load-balanced round-robin. Skips issues that already have 2+ roster reviewers.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log planned assignments without applying them'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: upcoming-auto-assign
+  cancel-in-progress: false
+
+jobs:
+  assign:
+    name: Assign reviewers to Upcoming issues
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install --no-save js-yaml@4
+
+      - name: Run auto-assign
+        uses: actions/github-script@v8
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        with:
+          github-token: ${{ secrets.ONBOARDING_MONITOR_TOKEN }}
+          script: |
+            const path = require('path');
+            const scriptPath = path.join(process.env.GITHUB_WORKSPACE, 'scripts', 'assign-upcoming-reviewers.js');
+            const { assignUpcomingReviewers } = require(scriptPath);
+
+            const dryRun = process.env.DRY_RUN === 'true';
+
+            try {
+              await assignUpcomingReviewers(github, context, { dryRun });
+            } catch (error) {
+              console.error('❌ Auto-assign failed:', error);
+              core.setFailed(error.message);
+            }
