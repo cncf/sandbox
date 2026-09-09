@@ -195,29 +195,15 @@ function pickReviewers({ issue, roster, rosterIndex, load, dryRun }) {
 }
 
 async function assignReviewers(github, context, issueNumber, assignees) {
-  const before = await github.rest.issues.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: issueNumber,
-  });
-  const beforeLogins = (before.data.assignees || []).map(a => a.login);
-
-  await github.rest.issues.addAssignees({
+  const response = await github.rest.issues.addAssignees({
     owner: context.repo.owner,
     repo: context.repo.repo,
     issue_number: issueNumber,
     assignees,
   });
-
-  const after = await github.rest.issues.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: issueNumber,
-  });
-  const afterLogins = (after.data.assignees || []).map(a => a.login);
-
-  const added = afterLogins.filter(a => !beforeLogins.includes(a));
-  const dropped = assignees.filter(a => !afterLogins.includes(a));
+  const finalLogins = (response.data.assignees || []).map(a => a.login);
+  const added = assignees.filter(a => finalLogins.includes(a));
+  const dropped = assignees.filter(a => !finalLogins.includes(a));
   console.log(`      ✅ #${issueNumber}: added [${added.join(', ') || '(none)'}]`);
   if (dropped.length > 0) {
     console.log(`      ⚠️  #${issueNumber}: GitHub silently dropped [${dropped.join(', ')}] — check they have access to ${context.repo.owner}/${context.repo.repo}`);

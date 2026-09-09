@@ -39,8 +39,9 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        run: npm install --no-save js-yaml@4
+        run: npm install --no-save js-yaml@4.1.0
 
+      # Token must have: contents:read on cncf/people (roster), org read:project on cncf (project 14), issues:write on cncf/sandbox.
       - name: Run auto-assign
         uses: actions/github-script@v8
         env:
