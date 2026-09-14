@@ -1,9 +1,12 @@
 name: Upcoming Sandbox Review Auto-Assign Reviewers
 
-# Scans the CNCF Sandbox project board (cncf/projects/14) every 15 minutes for
-# open [Sandbox] application issues whose Status is "Upcoming", and assigns
-# TOC members from cncf/people teams.cncf-toc.members using a lifetime
-# load-balanced round-robin. Skips issues that already have 2+ roster reviewers.
+# Two jobs share this file:
+#   1. assign   - cron every 15 min: assigns TOC reviewers to Sandbox issues
+#                 in the Upcoming column on cncf/projects/14. Skips issues
+#                 carrying the `gitvote` label.
+#   2. unassign - fires on `issues.labeled` when the `gitvote` label is added:
+#                 strips TOC roster members from the issue's assignees (single
+#                 shot; leaves non-roster assignees such as the applicant).
 
 on:
   schedule:
@@ -15,19 +18,21 @@ on:
         required: false
         type: boolean
         default: false
+  issues:
+    types: [labeled]
 
 permissions:
   issues: write
   contents: read
 
-concurrency:
-  group: upcoming-auto-assign
-  cancel-in-progress: false
-
 jobs:
   assign:
     name: Assign reviewers to Upcoming issues
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    concurrency:
+      group: upcoming-auto-assign-assign
+      cancel-in-progress: false
 
     steps:
       - name: Checkout repository
@@ -59,5 +64,42 @@ jobs:
               await assignUpcomingReviewers(github, context, { dryRun });
             } catch (error) {
               console.error('❌ Auto-assign failed:', error);
+              core.setFailed(error.message);
+            }
+
+  unassign:
+    name: Unassign TOC reviewers on gitvote label
+    if: github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'gitvote'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: upcoming-auto-assign-unassign-${{ github.event.issue.number }}
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install --no-save js-yaml@4.1.0
+
+      # Token must have: contents:read on cncf/people (roster) and issues:write on cncf/sandbox.
+      - name: Run unassign
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.ONBOARDING_MONITOR_TOKEN }}
+          script: |
+            const path = require('path');
+            const scriptPath = path.join(process.env.GITHUB_WORKSPACE, 'scripts', 'unassign-vote-reviewers.js');
+            const { unassignVoteReviewers } = require(scriptPath);
+
+            try {
+              await unassignVoteReviewers(github, context);
+            } catch (error) {
+              console.error('❌ Unassign failed:', error);
               core.setFailed(error.message);
             }

@@ -12,6 +12,7 @@ const SANDBOX_REPO_FULL = 'cncf/sandbox';
 const TARGET_STATUS_RE = /upcoming/i;
 const SANDBOX_TITLE_PREFIX = '[Sandbox]';
 const SLOTS_PER_ISSUE = 2;
+const VOTE_LABEL = 'gitvote';
 
 async function loadRoster(github) {
   console.log(`📥 Loading roster from ${ROSTER_OWNER}/${ROSTER_REPO}/${ROSTER_PATH}@${ROSTER_REF}`);
@@ -61,6 +62,7 @@ async function fetchUpcomingIssues(github) {
                   author { login }
                   repository { nameWithOwner }
                   assignees(first: 20) { nodes { login } }
+                  labels(first: 50) { nodes { name } }
                 }
               }
               fieldValues(first: 20) {
@@ -102,6 +104,12 @@ async function fetchUpcomingIssues(github) {
       });
       const statusName = statusValue && statusValue.name;
       if (!statusName || !TARGET_STATUS_RE.test(statusName)) continue;
+
+      const labelNames = (content.labels && content.labels.nodes || []).map(l => l.name);
+      if (labelNames.includes(VOTE_LABEL)) {
+        console.log(`   ⏭️  #${content.number}: has '${VOTE_LABEL}' label; skipping assignment`);
+        continue;
+      }
 
       upcoming.push({
         number: content.number,
@@ -260,4 +268,4 @@ async function assignUpcomingReviewers(github, context, { dryRun = false } = {})
   console.log(`✅ Done`);
 }
 
-module.exports = { assignUpcomingReviewers };
+module.exports = { assignUpcomingReviewers, loadRoster };
