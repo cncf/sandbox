@@ -72,7 +72,9 @@ jobs:
     if: github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'gitvote'
     runs-on: ubuntu-latest
     concurrency:
-      group: upcoming-auto-assign-unassign-${{ github.event.issue.number }}
+      # Shared with `assign` to prevent a race where the cron job assigns TOC members
+      # after unassign has already run for the same issue.
+      group: upcoming-auto-assign-assign
       cancel-in-progress: false
 
     steps:

@@ -62,7 +62,7 @@ async function fetchUpcomingIssues(github) {
                   author { login }
                   repository { nameWithOwner }
                   assignees(first: 20) { nodes { login } }
-                  labels(first: 50) { nodes { name } }
+                  labels(first: 100) { nodes { name } }
                 }
               }
               fieldValues(first: 20) {
