@@ -16,8 +16,10 @@ permissions:
   contents: read
 
 concurrency:
+  # git-vote applies gitvote/closed, gitvote/passed and removes gitvote/open within ~1s,
+  # so runs must queue rather than cancel each other or the gitvote/passed event is lost.
   group: vote-monitor-${{ github.event.issue.number || 'manual' }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   create-onboarding-issue:
