@@ -128,7 +128,7 @@ async function commentAndClose(github, context, originalIssueNumber, onboardingI
     issue_number: originalIssueNumber,
     body: `🎉 Congratulations! The onboarding issue has been created for **${projectName}**.
 
-The community vote has been completed successfully, and your project is now ready to begin the CNCF onboarding process.
+The Technical Oversight Committee (TOC) vote has been completed successfully, and your project is now ready to begin the CNCF onboarding process.
 
 **Next Steps:**
 - Please review and work through the tasks in the onboarding issue: #${onboardingIssueNumber}
