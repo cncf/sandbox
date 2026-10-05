@@ -45,7 +45,15 @@ below). Do not browse beyond what is needed for these checks:
    application. Confirm it exists (not a 404), is an actual maintainers list
    (not a contributors graph), and identifies maintainers with name, GitHub
    ID, and company/organization affiliation.
-4. **Other listed links** (website, CoC, contributing guide, security policy,
+4. **Project name** — take the project name from the issue title and the
+   application. Determine whether it uses `kube`, `k8s`, or a close variant
+   as a prefix or suffix (e.g. `kubefoo`, `foo-kube`, `k8s-bar`, `bark8s`).
+   If it does, look anywhere in the application (the naming question, the
+   subproject separation answer, or "Additional information") for a link to
+   a public record of consensus/approval from the Kubernetes project
+   leadership group or the relevant TAG, and fetch it to confirm it resolves
+   and plainly documents approval of the name.
+5. **Other listed links** (website, CoC, contributing guide, security policy,
    adopters, roadmap) — spot-check that they resolve and match what the
    application claims; report mismatches as concerns.
 
@@ -81,6 +89,16 @@ unambiguously evident from the application text or from content you fetched:
    company/organization affiliation.
 5. **Effectively empty application** — the form is substantially unfilled
    (placeholder text, "No response" for the majority of required fields).
+6. **Kubernetes-derived name without documented approval** — the project name
+   uses `kube`, `k8s`, or a close variant as a prefix or suffix, AND the
+   application provides no link anywhere to a public record of consensus from
+   the Kubernetes project leadership group or relevant TAG (or the provided
+   link 404s, or plainly does not document approval of the name). Apply this
+   only when the name clearly borrows the Kubernetes mark — incidental letter
+   sequences inside an unrelated word are not a violation.
+
+Naming or trademark resemblance to any project *other than* Kubernetes is NOT
+a clear violation — report it as a concern for the TOC to weigh.
 
 Anything that is merely *uncertain*, *weak*, or *unverifiable* (e.g. a fetch
 failed, or a non-GitHub host you cannot inspect) is NOT a clear violation —
@@ -104,7 +122,7 @@ after) with exactly this shape:
   "concerns": [
     "<non-blocking concern the TOC may want to verify, one string each>"
   ],
-  "summary": "<a concise GitHub-markdown checklist assessing the application against each major criterion: license, project age, MAINTAINERS file, project-vs-reference-architecture, subproject separation, docs (CoC/contributing/security/adopters/roadmap), and alignment with TOC principles. Use ✅ / ⚠️ / ❌ per item.>"
+  "summary": "<a concise GitHub-markdown checklist assessing the application against each major criterion: license, project age, MAINTAINERS file, project-vs-reference-architecture, subproject separation, project naming/trademark, docs (CoC/contributing/security/adopters/roadmap), and alignment with TOC principles. Use ✅ / ⚠️ / ❌ per item.>"
 }
 
 Rules:

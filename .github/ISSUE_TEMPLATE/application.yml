@@ -348,6 +348,35 @@ body:
         - label: If the project is accepted, I agree the project will follow the CNCF IP Policy
           required: true
 
+  - type: checkboxes
+    id: naming
+    attributes:
+      label: Project naming
+      description: |
+        All CNCF projects are subject to the Linux Foundation [Trademark Usage Policies](https://www.linuxfoundation.org/legal/trademark-usage). New and incoming projects should avoid using existing trademarks in their proposed project names.
+
+        See the TOC's [naming conventions for projects](https://github.com/cncf/toc/blob/main/process/README.md#naming-conventions-for-projects) for full details.
+      options:
+        - label: I have reviewed the Linux Foundation Trademark Usage Policies and confirm the project name does not use an existing trademark
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Does the project name use "kube", "k8s", or another existing project's prefix/suffix?
+      description: |
+        If your project name uses a popular prefix or suffix of an existing project — most commonly **`kube`** or **`k8s`** — you MUST consult the leadership group (TAG) of that project, reach consensus on the name, and **link to the public record of that consensus here**.
+
+        **If no prefix or suffix of an existing project is used, write "N/A".**
+
+        **⚠️ Applications whose name uses a `kube` or `k8s` prefix/suffix without a link to documented approval will be closed.**
+
+        **Examples that require documented approval:** `kubefoo`, `foo-kube`, `k8s-bar`, `bark8s`
+
+        **What to link:** a public issue, meeting minutes, or mailing list thread showing the respective project's leadership group or TAG agreed to the name, e.g. `https://github.com/kubernetes/community/issues/123`
+      placeholder: N/A - the project name does not use a prefix or suffix of an existing project
+    validations:
+      required: true
+
   - type: textarea
     attributes:
       label: Will the project require a license exception?
@@ -417,6 +446,7 @@ body:
         - Repository is **6+ months old** with active development
         - If separating from a parent project: public vote issue from parent project maintainers linked
         - Project is **reusable**, not a reference architecture, reference implementation, or company-specific platform
+        - Project name does not use an existing trademark; if it uses a `kube`/`k8s` prefix or suffix, a link to documented approval is provided
 
         **Recommended (improves review experience):**
         - Code of Conduct, Contributing guide, Security policy properly documented
@@ -431,6 +461,7 @@ body:
         - ❌ Repository younger than 6 months
         - ❌ Saying "will add [required file] after acceptance"
         - ❌ Reference architecture or reference implementation submitted as a project
+        - ❌ Using a `kube` or `k8s` prefix/suffix without linking to documented approval from the respective project's leadership group (TAG)
 
         <br />
 
