@@ -65,5 +65,8 @@ A "Project Contribution Agreement" must be completed and any existing trademarks
 - [ ] Add the project to the [Cloud Native Landscape](https://landscape.cncf.io) after PCC activation, including the `lfx_slug` in the landscape configuration file.
 - [ ] Add the maintainers team to a license scanner service, either, CNCF [FOSSA](https://fossa.com/) or CNCF [Snyk](https://snyk.io/).
 - [ ] Create groups.io project maintainer list in PCC.
+- [ ] Create project in CNCF Service desk
+- [ ] Run [Onboard Project workflow](https://github.com/cncf/maintainer-manager/actions/workflows/onboard-project.yml)
+  - [ ] Run Service desk and group.io workflow
 - [ ] Add project's groups.io maintainer list to [maintainers@cncf.io](https://groups.google.com/a/cncf.io/g/maintainers/members)
 - [ ] Send a welcome email to confirm maintainer list access.
