@@ -49,6 +49,12 @@ Many applications are closed without TOC review due to not meeting basic eligibi
 - CNCF Sandbox accepts reusable projects, not reference architectures or implementations
 - If your project shows how to wire together existing tools (not building new tool), submit to [CNCF Reference Architectures](https://architecture.cncf.io/)
 
+**✅ Project Naming**
+- All CNCF projects are subject to the Linux Foundation [Trademark Usage Policies](https://www.linuxfoundation.org/legal/trademark-usage); proposed project names must avoid using existing trademarks
+- If your name uses a popular prefix or suffix of an existing project — most commonly **`kube`** or **`k8s`** — you must consult that project's documented governance/leadership body (e.g. steering committee, TOC, or TAG where applicable), reach consensus, and **link to the public record of that consensus** in your application. For `kube`/`k8s` names this means the Kubernetes project's governance bodies (e.g. Kubernetes Steering Committee or the relevant Kubernetes SIG)
+- Applications using a `kube` or `k8s` prefix/suffix without a link to documented approval will be closed
+- See the TOC's [naming conventions for projects](https://github.com/cncf/toc/blob/main/process/README.md#naming-conventions-for-projects)
+
 For detailed requirements and examples, review the [application form](https://github.com/cncf/sandbox/issues/new?assignees=&labels=New&projects=&template=application.yml&title=%5BSandbox%5D+%3CProject+Name%3E) which includes inline guidance.
 
 ## What's next?
