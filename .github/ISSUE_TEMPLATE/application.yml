@@ -50,6 +50,9 @@ body:
 
         Describe the project at a high level.
 
+        > [!CAUTION]
+        > All CNCF projects are subject to the [Trademark Usage Policies](https://www.linuxfoundation.org/legal/trademark-usage) set by the Linux Foundation. Specifically, new or incoming [projects should avoid using existing trademarks in their proposed project names](https://github.com/cncf/toc/blob/main/process/README.md#naming-conventions-for-projects). For example, projects using "kube" or "k8s" in their names will need to be renamed.
+
   - type: input
     attributes:
       label: Project summary
@@ -250,6 +253,13 @@ body:
     attributes:
       label: Business product or service to project separation
       description: If this project is related to one or more products or services of the sponsoring company/organization(s), please explain how you plan to separate this project from any products in terms of organization and development. The project could be the "upstream" open source version of a product or service, be a required dependency, or be a key part of the infrastructure you use to develop your products/services. If the project is completely unrelated to any product/service, or the project contributor is not a business, please put "This project is unrelated to any product or service."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Dependency on paid cloud, community, and SaaS services or subscriptions
+      description: Does this project depend on any paid services, for example any cloud credits consumed or paid Slack workspaces? If so, please explain the nature of these dependencies and how they impact the project's development and usage. Please also provide an estimate of the monthly cost of those services. If there are no such dependencies, please put "N/A".
     validations:
       required: true
 
